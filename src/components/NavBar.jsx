@@ -1,22 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 
 function NavBar() {
+  const [toggled, setToggled] = useState(false);
+
+  const handleOnClick = () => {
+    setToggled((prevState) => {
+      return !prevState;
+    });
+  };
+
   return (
-    <div className="bg-red-400 h-14 flex items-center justify-end">
-      <div className="hidden md:block">
-        <Link className="mr-3" to="/">
+    <div>
+      <div className="bg-emerald-600 h-14 flex items-center justify-end border-b-white border-b-2 z-10">
+        <div className="hidden md:block">
+          <Link className="mr-11" to="/">
+            Home
+          </Link>
+          <Link className="mr-11" to="/about">
+            About
+          </Link>
+        </div>
+        <div className="block md:hidden">
+          <div className="wrap">
+            <button
+              className={toggled ? styles.open : ""}
+              value={toggled}
+              onClick={handleOnClick}
+            >
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`md:hidden ${
+          !toggled ? "hidden" : ""
+        } flex flex-col justify-center ${styles.mobileDrop} absolute w-full`}
+      >
+        <Link
+          onClick={handleOnClick}
+          className="flex justify-center py-4 bg-emerald-600 border-b-white border-b-2"
+          to="/"
+        >
           Home
         </Link>
-        <Link className="mr-3" to="/about">
+        <Link
+          onClick={handleOnClick}
+          className="flex justify-center py-4 bg-emerald-600 border-b-white border-b-2"
+          to="/about"
+        >
           About
         </Link>
-      </div>
-      <div className="block md:hidden" id={styles["nav-icon"]}>
-        <span></span>
-        <span></span>
-        <span></span>
+        <div
+          className="h-screen bg-black opacity-65"
+          onClick={handleOnClick}
+        ></div>
       </div>
     </div>
   );
