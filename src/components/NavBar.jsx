@@ -21,6 +21,9 @@ function NavBar() {
           <Link className="mr-11" to="/about">
             About
           </Link>
+          <Link className="mr-11" to="/contact">
+            Contact
+          </Link>
         </div>
         <div className="block md:hidden">
           <div className="wrap">
@@ -54,6 +57,13 @@ function NavBar() {
           to="/about"
         >
           About
+        </Link>
+        <Link
+          onClick={handleOnClick}
+          className={`flex justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks}`}
+          to="/contact"
+        >
+          Contact
         </Link>
         <div
           className="h-screen bg-black opacity-40"
