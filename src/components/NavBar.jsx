@@ -37,26 +37,26 @@ function NavBar() {
         </div>
       </div>
       <div
-        className={`md:hidden ${
-          !toggled ? "hidden" : ""
-        } flex flex-col justify-center ${styles.mobileDrop} absolute w-full`}
+        className={`md:hidden flex flex-col justify-center absolute w-full ${
+          styles.mobileDrop
+        } ${!toggled ? "hidden" : ""} `}
       >
         <Link
           onClick={handleOnClick}
-          className="flex justify-center py-4 bg-emerald-600 border-b-white border-b-2"
+          className={`flex justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks} `}
           to="/"
         >
           Home
         </Link>
         <Link
           onClick={handleOnClick}
-          className="flex justify-center py-4 bg-emerald-600 border-b-white border-b-2"
+          className={`flex justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks}`}
           to="/about"
         >
           About
         </Link>
         <div
-          className="h-screen bg-black opacity-65"
+          className="h-screen bg-black opacity-40"
           onClick={handleOnClick}
         ></div>
       </div>
