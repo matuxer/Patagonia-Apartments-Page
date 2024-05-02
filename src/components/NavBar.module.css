@@ -63,6 +63,13 @@ button.open span:last-of-type {
   transition: 0.5s;
 }
 
+.menuLinks {
+  color: white;
+  font-weight: bold;
+  font-size: large;
+  letter-spacing: 2px;
+}
+
 .dropDownLinks {
   color: white;
   font-weight: bold;

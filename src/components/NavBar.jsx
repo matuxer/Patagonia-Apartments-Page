@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./NavBar.module.css";
 
 function NavBar() {
@@ -13,9 +13,14 @@ function NavBar() {
 
   return (
     <div>
-      <div className="bg-emerald-600 h-14 flex items-center justify-end border-b-white border-b-2 z-10">
-        <div className="hidden md:block">
-          <Link className="mr-11" to="/">
+      <div className="bg-emerald-600 h-14 flex items-center justify-between border-b-white border-b-2 z-10 md:py-8">
+        <div className="p-5">
+          <a href="/">
+            <img src="" alt="Logo" />
+          </a>
+        </div>
+        <div className={`hidden md:block ${styles.menuLinks}`}>
+          <Link className="mr-11 hidden" to="/">
             Home
           </Link>
           <Link className="mr-11" to="/about">
@@ -46,7 +51,7 @@ function NavBar() {
       >
         <Link
           onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks} `}
+          className={`hidden justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks} `}
           to="/"
         >
           Home
