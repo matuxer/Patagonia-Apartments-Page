@@ -39,6 +39,11 @@ button span {
   background: white;
   transition: all 0.3s ease-in-out;
 }
+
+.blackMenu {
+  transition: all 0.3s ease-in-out;
+}
+
 button.open span:first-of-type {
   transform: rotate(135deg);
   -ms-transform: rotate(135deg);

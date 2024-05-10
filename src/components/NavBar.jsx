@@ -13,7 +13,7 @@ function NavBar() {
 
   return (
     <div>
-      <div className="bg-emerald-600 h-14 flex items-center justify-between border-b-white border-b-2 z-10 md:py-8">
+      <div className="bg-emerald-600 h-14 flex items-center justify-between border-b-white border-b-2 absolute z-[100] w-full md:py-8">
         <div className="p-5">
           <a href="/">
             <img src="" alt="Logo" />
@@ -45,9 +45,9 @@ function NavBar() {
         </div>
       </div>
       <div
-        className={`md:hidden flex flex-col justify-center absolute w-full ${
+        className={`md:hidden flex flex-col justify-center w-full absolute z-50 ${
           styles.mobileDrop
-        } ${!toggled ? "hidden" : ""} `}
+        } ${!toggled ? "-top-24" : "top-[56px]"} `}
       >
         <Link
           onClick={handleOnClick}
@@ -71,7 +71,9 @@ function NavBar() {
           Contact
         </Link>
         <div
-          className="h-screen bg-black opacity-40"
+          className={`h-screen bg-black ${
+            toggled ? "opacity-40" : "opacity-0"
+          } ${styles.blackMenu}`}
           onClick={handleOnClick}
         ></div>
       </div>
