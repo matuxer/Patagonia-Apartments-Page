@@ -36,7 +36,7 @@ button span {
   height: 2px;
   margin: 4px 0;
   border-radius: 1px;
-  background: white;
+  background: #4E6E82;
   transition: all 0.3s ease-in-out;
 }
 
@@ -65,14 +65,14 @@ button.open span:last-of-type {
 }
 
 .menuLinks {
-  color: white;
+  color: #4E6E82;
   font-weight: bold;
   font-size: large;
   letter-spacing: 2px;
 }
 
 .dropDownLinks {
-  color: white;
+  color: #4E6E82;
   font-weight: bold;
   font-size: large;
   letter-spacing: 4px;

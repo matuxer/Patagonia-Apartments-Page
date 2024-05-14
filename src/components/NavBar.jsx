@@ -15,7 +15,7 @@ function NavBar() {
   
   return (
     <div>
-      <div className="bg-[#4E6E82] h-14 flex items-center justify-between border-b-white border-b-2 z-[100] w-full fixed md:py-8">
+      <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:py-8">
         <div className="p-5">
           <a href="/">
             <img className="h-10 md:h-12" src={logo} alt="Logo" />
@@ -53,21 +53,21 @@ function NavBar() {
       >
         <Link
           onClick={handleOnClick}
-          className={`hidden justify-center py-4 bg-[#4E6E82] border-b-white border-b-2 font-raleway ${styles.dropDownLinks} `}
+          className={`hidden justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks} `}
           to="/"
         >
           Home
         </Link>
         <Link
           onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-[#4E6E82] border-b-white border-b-2 font-raleway ${styles.dropDownLinks}`}
+          className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
           to="/about"
         >
           About
         </Link>
         <Link
           onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-[#4E6E82] border-b-white border-b-2 font-raleway ${styles.dropDownLinks}`}
+          className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
           to="/contact"
         >
           Contact
