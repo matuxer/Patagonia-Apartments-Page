@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
 
 function NavBar() {
@@ -11,9 +11,10 @@ function NavBar() {
     });
   };
 
+  
   return (
     <div>
-      <div className="bg-emerald-600 h-14 flex items-center justify-between border-b-white border-b-2 absolute z-[100] w-full md:py-8">
+      <div className="bg-emerald-600 h-14 flex items-center justify-between border-b-white border-b-2 z-[100] w-full fixed md:py-8">
         <div className="p-5">
           <a href="/">
             <img src="" alt="Logo" />
@@ -45,7 +46,7 @@ function NavBar() {
         </div>
       </div>
       <div
-        className={`md:hidden flex flex-col justify-center w-full absolute z-50 ${
+        className={`md:hidden flex flex-col justify-center w-full z-50 fixed ${
           styles.mobileDrop
         } ${!toggled ? "-top-24" : "top-[56px]"} `}
       >
@@ -71,8 +72,8 @@ function NavBar() {
           Contact
         </Link>
         <div
-          className={`h-screen bg-black ${
-            toggled ? "opacity-40" : "opacity-0"
+          className={`h-screen bg-black opacity-40 ${
+            toggled ? "" : "hidden" 
           } ${styles.blackMenu}`}
           onClick={handleOnClick}
         ></div>
