@@ -1,0 +1,26 @@
+* {
+    scroll-margin-top: 56px;
+}
+
+.homeHeader {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/915e732a8f02920136c394218a146730-1000ushuaia_cartel_canal\ 1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(3px);
+    height: 450px;
+    width: 100%;
+    margin: -1px;
+    padding: 1px;
+}
+
+@media screen and (min-width: 768px) {
+    .homeHeader {
+        height: 100vh;
+        background-size: cover;
+    }
+
+    * {
+        scroll-margin-top: 66px;
+    }
+}
