@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
+import logo from "../images/Logo.svg";
 
 function NavBar() {
   const [toggled, setToggled] = useState(false);
@@ -14,20 +15,20 @@ function NavBar() {
   
   return (
     <div>
-      <div className="bg-emerald-600 h-14 flex items-center justify-between border-b-white border-b-2 z-[100] w-full fixed md:py-8">
+      <div className="bg-[#4E6E82] h-14 flex items-center justify-between border-b-white border-b-2 z-[100] w-full fixed md:py-8">
         <div className="p-5">
           <a href="/">
-            <img src="" alt="Logo" />
+            <img className="h-10 md:h-12" src={logo} alt="Logo" />
           </a>
         </div>
         <div className={`hidden md:block ${styles.menuLinks}`}>
-          <Link className="mr-11 hidden" to="/">
+          <Link className="mr-11 font-raleway hidden" to="/">
             Home
           </Link>
-          <Link className="mr-11" to="/about">
+          <Link className="mr-11 font-raleway" to="/about">
             About
           </Link>
-          <Link className="mr-11" to="/contact">
+          <Link className="mr-11 font-raleway" to="/contact">
             Contact
           </Link>
         </div>
@@ -52,21 +53,21 @@ function NavBar() {
       >
         <Link
           onClick={handleOnClick}
-          className={`hidden justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks} `}
+          className={`hidden justify-center py-4 bg-[#4E6E82] border-b-white border-b-2 font-raleway ${styles.dropDownLinks} `}
           to="/"
         >
           Home
         </Link>
         <Link
           onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks}`}
+          className={`flex justify-center py-4 bg-[#4E6E82] border-b-white border-b-2 font-raleway ${styles.dropDownLinks}`}
           to="/about"
         >
           About
         </Link>
         <Link
           onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-emerald-600 border-b-white border-b-2 ${styles.dropDownLinks}`}
+          className={`flex justify-center py-4 bg-[#4E6E82] border-b-white border-b-2 font-raleway ${styles.dropDownLinks}`}
           to="/contact"
         >
           Contact
