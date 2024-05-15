@@ -15,10 +15,10 @@ function NavBar() {
   
   return (
     <div>
-      <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:py-8">
+      <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:h-20 md:py-8">
         <div className="p-5">
           <a href="/">
-            <img className="h-10 md:h-12" src={logo} alt="Logo" />
+            <img className="h-10 md:h-12 md:ml-5" src={logo} alt="Logo" />
           </a>
         </div>
         <div className={`hidden md:block ${styles.menuLinks}`}>
