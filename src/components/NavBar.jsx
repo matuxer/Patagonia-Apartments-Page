@@ -16,9 +16,15 @@ function NavBar() {
     <div>
       <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:h-20 md:py-8">
         <div className="p-5">
-          <a href="/">
+          <Link 
+          onClick={() => {
+            if (toggled) {
+              handleOnClick()
+            }
+          }}
+          to="/">
             <img className="h-10 md:h-12 md:ml-5" src="/images/Logo.svg" alt="Logo" />
-          </a>
+          </Link>
         </div>
         <div className={`hidden md:block ${styles.menuLinks}`}>
           <Link className="mr-11 font-raleway hidden" to="/">
