@@ -3,7 +3,7 @@
     "apartments": [
       {
         "id": 1,
-        "name": "Patagonia Apartment 1",
+        "name": "Patagonia Apartment I",
         "images": [
           "images/apartment_1/A1.jpg",
           "images/apartment_1/A2.jpg",
@@ -38,7 +38,7 @@
       },
       {
         "id": 2,
-        "name": "Patagonia Apartment 2",
+        "name": "Patagonia Apartment II",
         "images": [
           "images/apartment_2/B1.jpg",
           "images/apartment_2/B2.jpg",
