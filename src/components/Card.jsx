@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Card({ props }) {
   const myStyle = {
@@ -10,7 +11,7 @@ function Card({ props }) {
     borderRadius: "24px 24px 0 0",
   };
   return (
-    <div className="group bg-white my-5 rounded-t-3xl rounded-b-md mx-14 w-10/12 cursor-pointer flex flex-col justify-evenly md:mx-0 md:h-[346px]">
+    <Link to={`/apartment/${props.id}`} className="group bg-white my-5 rounded-t-3xl rounded-b-md mx-14 w-10/12 cursor-pointer flex flex-col justify-evenly md:mx-0 md:h-[346px]">
       <div
         style={myStyle}
         className="duration-200 ease-in-out group-hover:brightness-75"
@@ -24,7 +25,7 @@ function Card({ props }) {
         </div>
         <img className="h-7 mr-2 ease-in-out duration-200 group-hover:mr-0" src="/images/arrow-narrow-right-svgrepo-com.svg" alt="arrow-right" />
       </div>
-    </div>
+    </Link>
   );
 }
 
