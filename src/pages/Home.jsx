@@ -15,7 +15,7 @@ function Home() {
   }, [])
 
   return (
-    <div className="bg-slate-700 h-full pt-[56px] md:pt-[66px]">
+    <div className="bg-slate-700 h-full pt-[56px] md:pt-[80px]">
       {/* HEADER */}
       <section className=" flex justify-center h-full ">
         <div className={`${styles.homeHeader}`}></div>
