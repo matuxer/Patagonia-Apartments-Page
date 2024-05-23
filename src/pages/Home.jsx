@@ -20,11 +20,11 @@ function Home() {
       <section className=" flex justify-center h-full ">
         <div className={`${styles.homeHeader}`}></div>
         <div className="absolute flex flex-col justify-center items-center w-full h-[450px] md:h-screen">
-          <h1 className="text-white text-[25px] font-semibold font-raleway md:text-6xl">
+          <h1 className="text-white text-[25px] font-semibold font-raleway md:text-4xl lg:text-5xl">
             Patagonia Apartments
           </h1>
           <button
-            className={`z-0 mt-2 md:mt-10`}
+            className={`z-0 mt-2 md:mt-4 lg:mt-10`}
             onClick={() => {
               begin.current?.scrollIntoView({
                 behavior: "smooth",
@@ -33,7 +33,7 @@ function Home() {
             }}
           >
             <img
-              className="h-10 hover:scale-105 md:h-16"
+              className="h-10 hover:scale-105 md:h-10 lg:h-14"
               src="/images/arrow-circle-down-svgrepo-com.svg"
               alt="Arrow Down"
             />
@@ -42,12 +42,12 @@ function Home() {
       </section>
 
       {/* CONTENT */}
-      <section className="flex flex-col absolute">
+      <section className="flex flex-col">
         <div
           ref={begin}
-          className="bg-white w-full flex justify-center px-10 py-8 md:text-xl md:px-72 md:py-16"
+          className="absolute bg-white w-full flex justify-center items-center px-10 py-8 h-[244px] md:text-xl md:h-[240px] lg:px-60 "
         >
-          <p className="font-raleway text-center text-gray-500">
+          <p className="font-raleway text-sm text-center text-gray-500  sm:text-base">
             Nuestros espacios cuentan con toda la comodidad para que disfrutes
             de Ushuaia y te sientas en casa. Ubicados en edificios nuevos, te
             brindamos atención exclusiva y te ayudamos a elegir la mejor manera
@@ -55,7 +55,7 @@ function Home() {
             adapte a vos.
           </p>
         </div>
-        <div className="h-[1000px] w-full bg-[#f0f4f4]">
+        <div className="w-full bg-[#f0f4f4] mt-[244px] md:mt-[240px] ">
           <Cards apartments={apartments}/>
         </div>
       </section>

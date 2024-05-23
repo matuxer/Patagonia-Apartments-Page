@@ -5,7 +5,7 @@
 .homeHeader {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/ushuaia_cartel_canal_1.png');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-attachment: fixed;
     filter: blur(3px);
     height: 450px;
