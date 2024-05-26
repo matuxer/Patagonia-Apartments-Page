@@ -40,10 +40,10 @@ function Footer() {
           </div>
           {/* REDES */}
           <div className="flex flex-row gap-3 justify-center mt-9">
-            <a href="facebook.com">
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener">
               <img className="h-9 md:h-10" src="/images/facebook-round-svgrepo-com.svg" alt="Facebook Icon" />
             </a>
-            <a href="instagram.com">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">
               <img className="h-9 md:h-10" src="/images/instagram-f-svgrepo-com.svg" alt="Instagram Icon" />
             </a>
           </div>
