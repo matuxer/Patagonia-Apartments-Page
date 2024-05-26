@@ -6,3 +6,23 @@
     background-size: cover;
     background-position: top right 10%;
 }
+
+@media screen and (min-width: 640px) {
+    .footerBg {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footerBg {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
