@@ -24,7 +24,8 @@ function Apartment() {
   } else {
     return (
       <div className="pt-[56px] h-[700px] md:pt-[80px]">
-        <img src={`/${apartment.images[0]}`} alt="" />
+        <p>{apartment.name}</p>
+        <img className="h-52" src={`/${apartment.images[0]}`} alt="" />
       </div>
     );
   }
