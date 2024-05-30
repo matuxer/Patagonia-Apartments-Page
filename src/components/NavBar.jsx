@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
+import data from "../db.json";
 
 function NavBar() {
   const [toggled, setToggled] = useState(false);
+  const [apartmentToggled, setApartmentToggled] = useState(false);
+  const [apartments, setApartments] = useState([]);
 
   const handleOnClick = () => {
     setToggled((prevState) => {
@@ -11,19 +14,42 @@ function NavBar() {
     });
   };
 
-  
+  const handleApartmentClick = () => {
+    setApartmentToggled((prevState) => {
+      if (toggled) {
+        return !prevState
+      } else {
+        return false
+      }
+    });
+  };
+
+  console.log(apartments);
+
+  useEffect(() => {
+    setApartments(data[0].apartments);
+    if (!toggled) {
+      setApartmentToggled(false)
+    }
+  }, [toggled]);
+
   return (
     <div>
       <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:h-20 md:py-8">
         <div className="p-5">
-          <Link 
-          onClick={() => {
-            if (toggled) {
-              handleOnClick()
-            }
-          }}
-          to="/">
-            <img className="h-10 md:h-12 md:ml-5" src="/images/Logo.svg" alt="Logo" />
+          <Link
+            onClick={() => {
+              if (toggled) {
+                handleOnClick();
+              }
+            }}
+            to="/"
+          >
+            <img
+              className="h-10 md:h-12 md:ml-5"
+              src="/images/Logo.svg"
+              alt="Logo"
+            />
           </Link>
         </div>
         <div className={`hidden md:block ${styles.menuLinks}`}>
@@ -54,33 +80,69 @@ function NavBar() {
       <div
         className={`md:hidden flex flex-col justify-center w-full z-50 fixed ${
           styles.mobileDrop
-        } ${!toggled ? "-top-24" : "top-[56px]"} `}
+        } ${!toggled ? "-top-36" : "top-[56px]"} `}
       >
         <Link
           onClick={handleOnClick}
-          className={`hidden justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks} `}
-          to="/"
-        >
-          Home
-        </Link>
-        <Link
-          onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
+          className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 z-50 font-raleway ${styles.dropDownLinks}`}
           to="/about"
         >
           About
         </Link>
-        <Link
-          onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
-          to="/contact"
-        >
-          Contact
-        </Link>
+
         <div
-          className={`h-screen bg-black opacity-40 ${
-            toggled ? "" : "hidden" 
-          } ${styles.blackMenu}`}
+          onClick={handleApartmentClick}
+          className={`flex justify-center items-center py-4 bg-white border-b-[#4E6E82] border-b-2 z-50 ${styles.dropDownLinks}`}
+        >
+          <h1 className="font-raleway text-[#4E6E82]">Apartments</h1>
+          <img
+            className={`h-5 absolute left-0 pl-4 ${
+              !apartmentToggled ? styles.dropClosed : styles.dropOpen
+            }`}
+            src="/images/arrow-down-svgrepo-com.svg"
+            alt="arrow down"
+          />
+          <img
+            className={`h-5 absolute right-0 pr-4 ${
+              !apartmentToggled ? styles.dropClosed : styles.dropOpen
+            }`}
+            src="/images/arrow-down-svgrepo-com.svg"
+            alt="arrow down"
+          />
+        </div>
+        <div
+          className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
+            styles.mobileDrop
+          } ${!toggled ? "-top-48" : (!apartmentToggled ? "-top-2" : "top-[178px]")} `}
+        >
+          {apartments.length !== 0 ? (
+            apartments?.map((el) => {
+              return (
+                <Link
+                  onClick={handleOnClick}
+                  className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
+                  to={`/apartment/${el.id}`}
+                >
+                  {el.name}
+                </Link>
+              );
+            })
+          ) : (
+            <></>
+          )}
+          <Link
+            onClick={handleOnClick}
+            className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
+            to="/contact"
+          >
+            Contact
+          </Link>
+        </div>
+
+        <div
+          className={`h-screen bg-black opacity-40 ${toggled ? "" : "hidden"} ${
+            styles.blackMenu
+          }`}
           onClick={handleOnClick}
         ></div>
       </div>

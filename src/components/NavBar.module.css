@@ -77,3 +77,13 @@ button.open span:last-of-type {
   font-size: large;
   letter-spacing: 4px;
 }
+
+.dropClosed {
+  transform: rotateX(0deg);
+  transition-duration: 0.25s;
+}
+
+.dropOpen {
+  transform: rotateX(180deg);
+  transition-duration: 0.25s;
+}
