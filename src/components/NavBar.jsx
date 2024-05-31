@@ -6,6 +6,7 @@ import data from "../db.json";
 function NavBar() {
   const [toggled, setToggled] = useState(false);
   const [apartmentToggled, setApartmentToggled] = useState(false);
+  const [desktopToggled, setDesktopToggled] = useState(false);
   const [apartments, setApartments] = useState([]);
 
   const handleOnClick = () => {
@@ -17,10 +18,16 @@ function NavBar() {
   const handleApartmentClick = () => {
     setApartmentToggled((prevState) => {
       if (toggled) {
-        return !prevState
+        return !prevState;
       } else {
-        return false
+        return false;
       }
+    });
+  };
+
+  const handleDesktopClick = () => {
+    setDesktopToggled((prevState) => {
+      return !prevState;
     });
   };
 
@@ -29,7 +36,7 @@ function NavBar() {
   useEffect(() => {
     setApartments(data[0].apartments);
     if (!toggled) {
-      setApartmentToggled(false)
+      setApartmentToggled(false);
     }
   }, [toggled]);
 
@@ -52,13 +59,43 @@ function NavBar() {
             />
           </Link>
         </div>
-        <div className={`hidden md:block ${styles.menuLinks}`}>
-          <Link className="mr-11 font-raleway hidden" to="/">
-            Home
-          </Link>
+        <div className={`hidden md:flex md:flex-row ${styles.menuLinks}`}>
           <Link className="mr-11 font-raleway" to="/about">
             About
           </Link>
+          <div className="flex flex-row items-center" onClick={handleDesktopClick}>
+            <img
+              className={`h-5 mr-3 ${
+                !desktopToggled ? styles.dropClosed : styles.dropOpen
+              }`}
+              src="/images/arrow-down-svgrepo-com.svg"
+              alt="arrow down"
+            />
+            <h1 className="font-raleway">Apartments</h1>
+            <img
+              className={`h-5 mr-11 ml-3 ${
+                !desktopToggled ? styles.dropClosed : styles.dropOpen
+              }`}
+              src="/images/arrow-down-svgrepo-com.svg"
+              alt="arrow down"
+            />
+          </div>
+          <div className={`absolute flex-col bg-white top-20 right-0 mr-[120px]  items-center ${desktopToggled ? "flex" : "hidden"}`}>
+            {apartments.length !== 0 ? (
+              apartments?.map((el) => {
+                return (
+                  <Link
+                    className="font-raleway px-5 py-4"
+                    to={`/apartment/${el.id}`}
+                  >
+                    {el.name}
+                  </Link>
+                );
+              })
+            ) : (
+              <></>
+            )}
+          </div>
           <Link className="mr-11 font-raleway" to="/contact">
             Contact
           </Link>
@@ -113,7 +150,9 @@ function NavBar() {
         <div
           className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
             styles.mobileDrop
-          } ${!toggled ? "-top-48" : (!apartmentToggled ? "-top-2" : "top-[178px]")} `}
+          } ${
+            !toggled ? "-top-48" : !apartmentToggled ? "-top-2" : "top-[178px]"
+          } `}
         >
           {apartments.length !== 0 ? (
             apartments?.map((el) => {
