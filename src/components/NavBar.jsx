@@ -49,6 +49,10 @@ function NavBar() {
               if (toggled) {
                 handleOnClick();
               }
+
+              if (desktopToggled) {
+                handleDesktopClick();
+              }
             }}
             to="/"
           >
@@ -60,10 +64,21 @@ function NavBar() {
           </Link>
         </div>
         <div className={`hidden md:flex md:flex-row ${styles.menuLinks}`}>
-          <Link className="mr-11 font-raleway" to="/about">
+          <Link
+            onClick={() => {
+              if (desktopToggled) {
+                handleDesktopClick();
+              }
+            }}
+            className="mr-11 font-raleway"
+            to="/about"
+          >
             About
           </Link>
-          <div className="flex flex-row items-center" onClick={handleDesktopClick}>
+          <div
+            className="flex flex-row items-center cursor-pointer"
+            onClick={handleDesktopClick}
+          >
             <img
               className={`h-5 mr-3 ${
                 !desktopToggled ? styles.dropClosed : styles.dropOpen
@@ -80,12 +95,17 @@ function NavBar() {
               alt="arrow down"
             />
           </div>
-          <div className={`absolute flex-col bg-white top-20 right-0 mr-[120px]  items-center ${desktopToggled ? "flex" : "hidden"}`}>
+          <div
+            className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] items-center p-0 ${
+              desktopToggled ? `${styles.menuOpen}` : `${styles.menuClosed}`
+            }`}
+          >
             {apartments.length !== 0 ? (
               apartments?.map((el) => {
                 return (
                   <Link
-                    className="font-raleway px-5 py-4"
+                    onClick={handleDesktopClick}
+                    className="font-raleway px-8 py-4 w-full border-b-2 border-b-[#4E6E82] text-center"
                     to={`/apartment/${el.id}`}
                   >
                     {el.name}
@@ -96,7 +116,15 @@ function NavBar() {
               <></>
             )}
           </div>
-          <Link className="mr-11 font-raleway" to="/contact">
+          <Link
+            onClick={() => {
+              if (desktopToggled) {
+                handleDesktopClick();
+              }
+            }}
+            className="mr-11 font-raleway"
+            to="/contact"
+          >
             Contact
           </Link>
         </div>

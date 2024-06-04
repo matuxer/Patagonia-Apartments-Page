@@ -36,7 +36,7 @@ button span {
   height: 2px;
   margin: 4px 0;
   border-radius: 1px;
-  background: #4E6E82;
+  background: #4e6e82;
   transition: all 0.3s ease-in-out;
 }
 
@@ -65,14 +65,14 @@ button.open span:last-of-type {
 }
 
 .menuLinks {
-  color: #4E6E82;
+  color: #4e6e82;
   font-weight: bold;
   font-size: large;
   letter-spacing: 2px;
 }
 
 .dropDownLinks {
-  color: #4E6E82;
+  color: #4e6e82;
   font-weight: bold;
   font-size: large;
   letter-spacing: 4px;
@@ -85,5 +85,17 @@ button.open span:last-of-type {
 
 .dropOpen {
   transform: rotateX(180deg);
+  transition-duration: 0.25s;
+}
+
+.menuOpen {
+  transform-origin: top;
+  transform: rotateX(0deg);
+  transition-duration: 0.5s;
+}
+
+.menuClosed {
+  transform-origin: top;
+  transform: rotateX(90deg);
   transition-duration: 0.25s;
 }
