@@ -5,7 +5,7 @@ function Card({ props }) {
   const myStyle = {
     backgroundImage: `url(${props.images[0]})`,
     height: "250px",
-    backgroundPosition: "bottom",
+    backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     borderRadius: "22px 22px 0 0",
