@@ -157,7 +157,7 @@ function NavBar() {
 
         <div
           onClick={handleApartmentClick}
-          className={`flex justify-center items-center py-4 bg-white border-b-[#4E6E82] border-b-2 z-50 ${styles.dropDownLinks}`}
+          className={`flex justify-center items-center py-4 bg-white border-b-[#4E6E82] cursor-pointer border-b-2 z-50 ${styles.dropDownLinks}`}
         >
           <h1 className="font-raleway text-[#4E6E82]">Apartments</h1>
           <img
@@ -187,7 +187,7 @@ function NavBar() {
               return (
                 <Link
                   onClick={handleOnClick}
-                  className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
+                  className={`flex justify-center py-4 bg-slate-100 border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
                   to={`/apartment/${el.id}`}
                 >
                   {el.name}
