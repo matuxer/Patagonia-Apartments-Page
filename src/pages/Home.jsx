@@ -47,7 +47,7 @@ function Home() {
           ref={begin}
           className="absolute bg-white w-full flex justify-center items-center px-10 py-8 h-[244px] md:text-xl md:h-[240px] lg:px-60 "
         >
-          <p className="font-raleway text-sm text-center text-gray-500  sm:text-base">
+          <p className="font-raleway text-sm text-center font-medium text-gray-500  sm:text-base">
             Nuestros espacios cuentan con toda la comodidad para que disfrutes
             de Ushuaia y te sientas en casa. Ubicados en edificios nuevos, te
             brindamos atención exclusiva y te ayudamos a elegir la mejor manera

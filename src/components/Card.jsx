@@ -19,7 +19,7 @@ function Card({ props }) {
       <div className="py-4 px-5 w-fullh flex flex-row items-center justify-between md:h-[96px] ">
         <div className="w-full md:w-5/6">
           <h1 className="font-raleway font-bold">{props.name}</h1>
-          <p className="font-raleway font-medium text-sm text-gray-400">
+          <p className="font-raleway font-semibold text-sm text-gray-500">
             {props.location}
           </p>
         </div>
