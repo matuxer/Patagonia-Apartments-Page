@@ -1,6 +1,12 @@
 .errorBg {
-    background-image: url("../images/AP_Logo_casita_modif_21_blanco.png");
+    background-image: url("../images/Logo.svg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 400px;
+    background-size: 300px;
+}
+
+@media screen and (min-width: 768px) {
+    .errorBg {
+        background-size: 400px;
+    }
 }
