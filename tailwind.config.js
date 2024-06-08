@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "raleway": ["Raleway", "sans-serif"]
+        "raleway": ["Raleway", "sans-serif"],
+        "oswald": ["Oswald", "sans-serif"],
       }
     },
   },
