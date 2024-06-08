@@ -20,7 +20,7 @@ function Home() {
       <section className=" flex justify-center h-full ">
         <div className={`${styles.homeHeader}`}></div>
         <div className="absolute flex flex-row justify-center items-center w-full gap-1 sm:gap-2 md:gap-4 h-[450px] md:h-screen">
-          <h1 className="text-white text-2xl font-normal font-oswald pb-16 sm:text-3xl md:text-4xl lg:text-5xl lg:pb-20">
+          <h1 className="text-white text-2xl font-normal font-oswald pb-16 ml-[18px] sm:ml-5 sm:text-3xl md:text-4xl md:ml-[25px] lg:text-5xl lg:ml-8 lg:pb-20">
             PATAGONIA
           </h1>
           <div className="flex flex-col items-center">
