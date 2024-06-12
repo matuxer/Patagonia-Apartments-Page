@@ -1,0 +1,101 @@
+[
+  {
+    "apartments": [
+      {
+        "id": 1,
+        "name": "Patagonia Apartment I",
+        "images": [
+          "images/apartment_1/A1.jpg",
+          "images/apartment_1/A2.jpg",
+          "images/apartment_1/A3.jpg",
+          "images/apartment_1/A4.jpg",
+          "images/apartment_1/A5.jpg",
+          "images/apartment_1/A6.jpg",
+          "images/apartment_1/A7.jpg",
+          "images/apartment_1/A8.jpg",
+          "images/apartment_1/A9.jpg",
+          "images/apartment_1/A10.jpg",
+          "images/apartment_1/A11.jpg",
+          "images/apartment_1/A12.jpg",
+          "images/apartment_1/A13.jpg",
+          "images/apartment_1/A14.jpg",
+          "images/apartment_1/A15.jpg",
+          "images/apartment_1/A16.jpg",
+          "images/apartment_1/A17.jpg",
+          "images/apartment_1/A18.jpg",
+          "images/apartment_1/A19.jpg",
+          "images/apartment_1/A20.jpg",
+          "images/apartment_1/A21.jpg",
+          "images/apartment_1/A22.jpg",
+          "images/apartment_1/A23.jpg",
+          "images/apartment_1/A24.jpg",
+          "images/apartment_1/A25.jpg"
+        ],
+        "location": "Edificio en Leopoldo Lugones 1953, segundo piso.",
+        "description_1": "Monoambiente de 30 m2 totalmente equipado para 2 personas.",
+        "description_2": "Podemos armar una cama doble o 2 camas individuales.",
+        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas."
+      },
+      {
+        "id": 2,
+        "name": "Patagonia Apartment II",
+        "images": [
+          "images/apartment_2/B1.jpg",
+          "images/apartment_2/B2.jpg",
+          "images/apartment_2/B3.jpg",
+          "images/apartment_2/B4.jpg",
+          "images/apartment_2/B5.jpg",
+          "images/apartment_2/B6.jpg",
+          "images/apartment_2/B7.jpg",
+          "images/apartment_2/B8.jpg",
+          "images/apartment_2/B9.jpg",
+          "images/apartment_2/B10.jpg",
+          "images/apartment_2/B11.jpg",
+          "images/apartment_2/B12.jpg",
+          "images/apartment_2/B13.jpg",
+          "images/apartment_2/B14.jpg",
+          "images/apartment_2/B15.jpg",
+          "images/apartment_2/B16.jpg",
+          "images/apartment_2/B17.jpg",
+          "images/apartment_2/B18.jpg",
+          "images/apartment_2/B19.jpg",
+          "images/apartment_2/B20.jpg",
+          "images/apartment_2/B21.jpg",
+          "images/apartment_2/B22.jpg",
+          "images/apartment_2/B23.jpg",
+          "images/apartment_2/B24.jpg",
+          "images/apartment_2/B25.jpg"
+        ],
+        "location": "Edificio en Leopoldo Lugones 1953, segundo piso.",
+        "description_1": "Monoambiente de 30 m2 totalmente equipado para 2 personas.",
+        "description_2": "Podemos armar una cama doble o 2 camas individuales.",
+        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas."
+      },
+      {
+        "id": 3,
+        "name": "Disfrutar Sur",
+        "images": [
+          "images/apartment_3/C1.jpg",
+          "images/apartment_3/C2.jpg",
+          "images/apartment_3/C3.jpg",
+          "images/apartment_3/C4.jpg",
+          "images/apartment_3/C5.jpg",
+          "images/apartment_3/C6.jpg",
+          "images/apartment_3/C7.jpg",
+          "images/apartment_3/C8.jpg",
+          "images/apartment_3/C9.jpg",
+          "images/apartment_3/C10.jpg",
+          "images/apartment_3/C11.jpg",
+          "images/apartment_3/C12.jpg",
+          "images/apartment_3/C13.jpg",
+          "images/apartment_3/C14.jpg",
+          "images/apartment_3/C15.jpg"
+        ],
+        "location": "Edificio Lugones 1953, primer piso.",
+        "description_1": "Monoambiente de 30 m2 totalmente equipado para 2 personas.",
+        "description_2": "Podemos armar una cama doble o 2 camas individuales.",
+        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente."
+      }
+    ]
+  }
+]

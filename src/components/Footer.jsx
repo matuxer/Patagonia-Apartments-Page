@@ -1,5 +1,10 @@
 import React from "react";
 import styles from "./Footer.module.css";
+import Logo from "../images/AP_Logo_casita_modif_21_blanco.png";
+import MailIcon from "../images/mail-alt-svgrepo-com.svg";
+import PhoneIcon from "../images/phone-svgrepo-com.svg";
+import InstagramIcon from "../images/instagram-f-svgrepo-com.svg";
+import FacebookIcon from "../images/facebook-round-svgrepo-com.svg";
 
 function Footer() {
   return (
@@ -20,7 +25,7 @@ function Footer() {
             <div className="flex flex-row items-center">
               <img
                 className="h-6 md:h-7"
-                src="/images/phone-svgrepo-com.svg"
+                src={PhoneIcon}
                 alt="phone icon"
               />
               <p className="font-raleway text-white font-bold ml-2 md:text-lg">
@@ -30,7 +35,7 @@ function Footer() {
             <div className="flex flex-row items-center">
               <img
                 className="h-6 md:h-7"
-                src="/images/mail-alt-svgrepo-com.svg"
+                src={MailIcon}
                 alt="mail icon"
               />
               <p className="font-raleway text-white font-bold ml-2 md:text-lg">
@@ -40,16 +45,32 @@ function Footer() {
           </div>
           {/* REDES */}
           <div className="flex flex-row gap-3 justify-center mt-9">
-            <a href="https://www.facebook.com" target="_blank" rel="noreferrer noopener">
-              <img className="h-9 md:h-10" src="/images/facebook-round-svgrepo-com.svg" alt="Facebook Icon" />
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                className="h-9 md:h-10"
+                src={FacebookIcon}
+                alt="Facebook Icon"
+              />
             </a>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer noopener">
-              <img className="h-9 md:h-10" src="/images/instagram-f-svgrepo-com.svg" alt="Instagram Icon" />
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img
+                className="h-9 md:h-10"
+                src={InstagramIcon}
+                alt="Instagram Icon"
+              />
             </a>
           </div>
         </div>
         <div className="hidden sm:block">
-          <img className="opacity-40" src="/images/AP_Logo_casita_modif_21_blanco.png" alt="footer logo" />
+          <img className="opacity-40" src={Logo} alt="footer logo" />
         </div>
       </div>
     </div>

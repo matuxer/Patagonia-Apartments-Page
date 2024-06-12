@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
-import data from "../assets/db.json";
+import data from "../db.json";
+import Logo from "../images/Logo.svg"
+import NavBarArrow from "../images/arrow-down-svgrepo-com.svg";
 
 function NavBar() {
   const [toggled, setToggled] = useState(false);
@@ -58,7 +60,7 @@ function NavBar() {
           >
             <img
               className="h-10 md:h-12 md:ml-5"
-              src="/images/Logo.svg"
+              src={Logo}
               alt="Logo"
             />
           </Link>
@@ -83,7 +85,7 @@ function NavBar() {
               className={`h-5 mr-3 ${
                 !desktopToggled ? styles.dropClosed : styles.dropOpen
               }`}
-              src="/images/arrow-down-svgrepo-com.svg"
+              src={NavBarArrow}
               alt="arrow down"
             />
             <h1 className="font-raleway">Apartments</h1>
@@ -91,7 +93,7 @@ function NavBar() {
               className={`h-5 mr-11 ml-3 ${
                 !desktopToggled ? styles.dropClosed : styles.dropOpen
               }`}
-              src="/images/arrow-down-svgrepo-com.svg"
+              src={NavBarArrow}
               alt="arrow down"
             />
           </div>
@@ -164,14 +166,14 @@ function NavBar() {
             className={`h-5 absolute left-0 pl-4 ${
               !apartmentToggled ? styles.dropClosed : styles.dropOpen
             }`}
-            src="/images/arrow-down-svgrepo-com.svg"
+            src={NavBarArrow}
             alt="arrow down"
           />
           <img
             className={`h-5 absolute right-0 pr-4 ${
               !apartmentToggled ? styles.dropClosed : styles.dropOpen
             }`}
-            src="/images/arrow-down-svgrepo-com.svg"
+            src={NavBarArrow}
             alt="arrow down"
           />
         </div>

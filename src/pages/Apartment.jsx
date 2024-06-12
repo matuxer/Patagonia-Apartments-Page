@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import data from "../assets/db.json";
+import data from "../db.json";
 
 function Apartment() {
   const { id } = useParams();
@@ -25,7 +25,7 @@ function Apartment() {
     return (
       <div className="pt-[56px] h-[700px] md:pt-[80px]">
         <p>{apartment.name}</p>
-        <img className="h-52" src={`/${apartment.images[0]}`} alt="" />
+        <img className="h-52" src={require(`../${apartment.images[0]}`)} alt="" />
       </div>
     );
   }

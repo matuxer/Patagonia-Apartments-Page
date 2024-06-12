@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CardArrow from "../images/arrow-narrow-right-svgrepo-com.svg";
 
 function Card({ props }) {
+  console.log("../" + props.images[0]);
   const myStyle = {
-    backgroundImage: `url(${props.images[0]})`,
+    backgroundImage: `url(${require(`../${props.images[0]}`)})`,
     height: "250px",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -23,7 +25,7 @@ function Card({ props }) {
             {props.location}
           </p>
         </div>
-        <img className="h-7 mr-2 ease-in-out duration-200 group-hover:mr-0" src="/images/arrow-narrow-right-svgrepo-com.svg" alt="arrow-right" />
+        <img className="h-7 mr-2 ease-in-out duration-200 group-hover:mr-0" src={CardArrow} alt="arrow-right" />
       </div>
     </Link>
   );

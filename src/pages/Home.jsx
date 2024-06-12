@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./Home.module.css";
 import { useRef } from "react";
 import Cards from "../components/Cards";
-import data from "../assets/db.json";
+import data from "../db.json";
 import { useState } from "react";
 import { useEffect } from "react";
+import LogoWhite from "../images/LogoWhite.svg";
+import HeaderArrow from "../images/arrow-circle-down-svgrepo-com.svg";
 
 function Home() {
   const begin = useRef(null);
@@ -26,7 +28,7 @@ function Home() {
           <div className="flex flex-col items-center">
             <img
               className="h-12 sm:h-16 md:h-20 lg:h-24"
-              src="/images/LogoWhite.svg"
+              src={LogoWhite}
               alt="Header Logo"
             />
             <button
@@ -40,7 +42,7 @@ function Home() {
             >
               <img
                 className="h-9 hover:scale-105 sm:h-10 lg:h-14"
-                src="/images/arrow-circle-down-svgrepo-com.svg"
+                src={HeaderArrow}
                 alt="Arrow Down"
               />
             </button>
