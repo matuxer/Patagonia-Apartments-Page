@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Home.module.css";
 import { useRef } from "react";
 import Cards from "../components/Cards";
-import data from "../db.json";
+import data from "../assets/db.json";
 import { useState } from "react";
 import { useEffect } from "react";
 

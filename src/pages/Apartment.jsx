@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import data from "../db.json";
+import data from "../assets/db.json";
 
 function Apartment() {
   const { id } = useParams();

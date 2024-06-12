@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
-import data from "../db.json";
+import data from "../assets/db.json";
 
 function NavBar() {
   const [toggled, setToggled] = useState(false);
