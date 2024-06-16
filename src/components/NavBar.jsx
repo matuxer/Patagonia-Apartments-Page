@@ -33,8 +33,6 @@ function NavBar() {
     });
   };
 
-  console.log(apartments);
-
   useEffect(() => {
     setApartments(data[0].apartments);
     if (!toggled) {
