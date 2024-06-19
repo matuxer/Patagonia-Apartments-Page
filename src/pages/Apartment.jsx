@@ -1,38 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import data from "../db.json";
-import PhotoAlbum from "react-photo-album";
 import LocationIcon from "../images/location-pin-alt-1-svgrepo-com.svg";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import CarouselComponent from "../components/CarouselComponent";
 
 function Apartment() {
   const { id } = useParams();
   const [apartment, setApartment] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     let info = data[0].apartments.filter((el) => {
       return el.id === Number(id);
     });
     setApartment(info[0]);
-    let imgPromises = info[0].images.map((el) => {
-      return new Promise((resolve) => {
-        const elImage = new Image();
-        elImage.src = require(`../${el}`);
 
-        elImage.onload = function () {
-          resolve({
-            src: elImage.src,
-            width: elImage.width,
-            height: elImage.height,
-          });
-        };
-      });
-    });
-    Promise.all(imgPromises).then((imgArr) => {
-      setPhotos(imgArr);
-      setLoading(false);
-    });
+    setLoading(false);
   }, [id]);
 
   if (loading) {
@@ -49,11 +33,12 @@ function Apartment() {
             {apartment.name}
           </h1>
           <p className="text-sm font-medium font-raleway my-2 flex flex-row items-center justify-start">
-            <img src={LocationIcon} className="h-5 mr-1" alt="..." />{apartment.location}
+            <img src={LocationIcon} className="h-5 mr-1" alt="..." />
+            {apartment.location}
           </p>
         </div>
-        <div className="overflow-y-scroll h-[300px] px-2 ">
-          <PhotoAlbum layout="rows" photos={photos} />
+        <div className="block px-1">
+          <CarouselComponent images={apartment.images} />
         </div>
       </div>
     );
