@@ -42,7 +42,7 @@ function CarouselComponent({ images }) {
     if (isSelected) {
       return (
         <li
-          className={`bg-[#4E6E82] w-[10px] h-[10px] inline-block rounded-full cursor-pointer mr-[5px] sm:mx-[5px] md:ml-0 lg:ml-[5px] `}
+          className={`bg-[#4E6E82] w-[7px] h-[7px] inline-block rounded-full cursor-pointer mr-[5px] sm:w-[10px] sm:h-[10px] sm:mx-[5px] md:ml-0 lg:ml-[5px] `}
           aria-label={`Selected: ${label} ${index + 1}`}
           title={`Selected: ${label} ${index + 1}`}
         />
@@ -50,7 +50,7 @@ function CarouselComponent({ images }) {
     }
     return (
       <li
-        className={`bg-[#dcdcdc] w-[10px] h-[10px] inline-block rounded-full cursor-pointer mr-[5px] sm:ml-[5px] md:ml-0 lg:ml-[5px] `}
+        className={`bg-[#dcdcdc] w-[7px] h-[7px] inline-block rounded-full cursor-pointer mr-[5px] sm:w-[10px] sm:h-[10px] sm:ml-[5px] md:ml-0 lg:ml-[5px] `}
         onClick={onClickHandler}
         onKeyDown={onClickHandler}
         value={index}
