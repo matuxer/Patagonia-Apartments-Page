@@ -18,7 +18,7 @@ function CarouselComponent({ images }) {
   const renderArrowPrev = (clickHandler, hasPrev, label) =>
     hasPrev && (
       <button
-        className="absolute left-0 hidden top-[35%] cursor-pointer w-7 p-0 h-7"
+        className="absolute left-0 hidden top-[40%] cursor-pointer w-9 p-0 h-9 md:block md:!bg-white md:rounded-r-full lg:top-[45%]"
         onClick={clickHandler}
         title={label}
       >
@@ -29,7 +29,7 @@ function CarouselComponent({ images }) {
   const renderArrowNext = (clickHandler, hasNext, label) =>
     hasNext && (
       <button
-        className="absolute right-0 hidden top-[35%] cursor-pointer w-7 p-0 h-7"
+        className="absolute right-0 hidden top-[40%] cursor-pointer w-9 p-0 h-9 md:block md:!bg-white md:rounded-l-full lg:top-[45%]"
         onClick={clickHandler}
         title={label}
       >
@@ -42,7 +42,7 @@ function CarouselComponent({ images }) {
     if (isSelected) {
       return (
         <li
-          className={`bg-[#4E6E82] w-[10px] h-[10px] inline-block rounded-full cursor-pointer mr-[5px] sm:mx-[5px]`}
+          className={`bg-[#4E6E82] w-[10px] h-[10px] inline-block rounded-full cursor-pointer mr-[5px] sm:mx-[5px] md:ml-0 lg:ml-[5px] `}
           aria-label={`Selected: ${label} ${index + 1}`}
           title={`Selected: ${label} ${index + 1}`}
         />
@@ -50,7 +50,7 @@ function CarouselComponent({ images }) {
     }
     return (
       <li
-        className={`bg-[#dcdcdc] w-[10px] h-[10px] inline-block rounded-full cursor-pointer mr-[5px] sm:mx-[5px]`}
+        className={`bg-[#dcdcdc] w-[10px] h-[10px] inline-block rounded-full cursor-pointer mr-[5px] sm:ml-[5px] md:ml-0 lg:ml-[5px] `}
         onClick={onClickHandler}
         onKeyDown={onClickHandler}
         value={index}
