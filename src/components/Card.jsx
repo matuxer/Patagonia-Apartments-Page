@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import CardArrow from "../images/arrow-narrow-right-svgrepo-com.svg";
 
 function Card({ props }) {
-  console.log("../" + props.images[0]);
   const myStyle = {
     backgroundImage: `url(${require(`../${props.images[0]}`)})`,
     height: "250px",
@@ -13,7 +12,7 @@ function Card({ props }) {
     borderRadius: "22px 22px 0 0",
   };
   return (
-    <Link to={`/apartment/${props.id}`} className="group bg-white my-5 rounded-t-3xl rounded-b-md mx-14 w-10/12 cursor-pointer flex flex-col justify-between md:mx-0 md:h-[346px]">
+    <Link to={`/apartment/${props.id}`} className="group bg-white md:my-5 rounded-t-3xl rounded-b-md mx-14 w-10/12 cursor-pointer flex flex-col justify-between md:mx-0 md:h-[346px]">
       <div
         style={myStyle}
         className="duration-200 ease-in-out group-hover:brightness-75"
