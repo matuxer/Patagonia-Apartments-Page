@@ -12,7 +12,7 @@ function Card({ props }) {
     borderRadius: "22px 22px 0 0",
   };
   return (
-    <Link to={`/apartment/${props.id}`} className="group bg-white md:my-5 rounded-t-3xl rounded-b-md mx-14 w-10/12 cursor-pointer flex flex-col justify-between md:mx-0 md:h-[346px]">
+    <Link to={`/apartment/${props.id}`} className="group bg-white rounded-t-3xl rounded-b-md mx-14 w-11/12  cursor-pointer flex flex-col justify-between md:mx-0 md:my-5 md:w-10/12">
       <div
         style={myStyle}
         className="duration-200 ease-in-out group-hover:brightness-75"
