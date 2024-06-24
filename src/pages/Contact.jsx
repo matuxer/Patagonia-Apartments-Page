@@ -23,7 +23,7 @@ function Contact() {
                 Nombre
               </label>
               <input
-                className="border-2 border-gray-300 rounded-md py-1 px-2 w-full outline-none focus:border-[#4E6E82]"
+                className="border-2 border-gray-300 rounded-md py-1 px-2 w-full outline-none selection:bg-blue-700 selection:text-white bg-[#f7f7f7] focus:border-[#4E6E82]"
                 id="first_name"
                 placeholder="..."
               />
@@ -36,7 +36,7 @@ function Contact() {
                 Apellido
               </label>
               <input
-                className="border-2 border-gray-300 rounded-md py-1 px-2 w-full outline-none focus:border-[#4E6E82]"
+                className="border-2 border-gray-300 rounded-md py-1 px-2 w-full outline-none selection:bg-blue-700 selection:text-white bg-[#f7f7f7] focus:border-[#4E6E82]"
                 id="last_name"
                 placeholder="..."
               />
@@ -50,7 +50,7 @@ function Contact() {
               Email
             </label>
             <input
-              className="border-2 border-gray-300 rounded-md py-1 px-2 outline-none focus:border-[#4E6E82]"
+              className="border-2 border-gray-300 rounded-md py-1 px-2 outline-none selection:bg-blue-700 selection:text-white bg-[#f7f7f7] focus:border-[#4E6E82]"
               type="email"
               id="email"
               placeholder="..."
@@ -64,7 +64,7 @@ function Contact() {
               Mensaje
             </label>
             <textarea
-              className="border-2 border-gray-300 rounded-md py-1 px-2 min-h-[150px] outline-none focus:border-[#4E6E82]"
+              className="border-2 border-gray-300 rounded-md py-1 px-2 min-h-[150px] outline-none selection:bg-blue-700 selection:text-white bg-[#f7f7f7] focus:border-[#4E6E82]"
               type="email"
               id="message"
               placeholder="Mensaje..."
