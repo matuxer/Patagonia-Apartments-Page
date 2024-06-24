@@ -70,10 +70,14 @@ function Contact() {
               placeholder="Mensaje..."
             />
           </div>
-          <button type="submit" className="w-full my-3 bg-[#4E6E82] border-2 border-white text-white font-raleway font-semibold rounded-lg shadow active:text-[#4E6E82] active:bg-white active:border-[#4E6E82] hover:bg-[#456477]">
+          <button type="submit" className="w-full my-3 bg-[#4E6E82] border-2 border-white text-white font-raleway font-semibold rounded-lg active:text-[#4E6E82] active:bg-white active:border-[#4E6E82] hover:bg-[#456477]">
             Enviar
           </button>
         </form>
+      </div>
+      <div className="flex flex-col my-5 px-4">
+      <h1 className="font-raleway font-bold text-xl mb-2">Donde Estamos</h1>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2299.085486590548!2d-68.32549501573266!3d-54.81361393914818!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c231661cee9df%3A0x4d5c99e50a24c104!2sLeopoldo%20Lugones%201953%2C%20V9410%20Ushuaia%2C%20Tierra%20del%20Fuego!5e0!3m2!1ses-419!2sar!4v1719257344579!5m2!1ses-419!2sar" className="border-0 w-full h-72 rounded-md " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   );
