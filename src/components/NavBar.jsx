@@ -64,28 +64,10 @@ function NavBar() {
           </Link>
         </div>
         <div className={`hidden md:flex md:flex-row ${styles.menuLinks}`}>
-          <Link
-            onClick={() => {
-              if (desktopToggled) {
-                handleDesktopClick();
-              }
-            }}
-            className="mr-11 font-raleway"
-            to="/about"
-          >
-            About
-          </Link>
           <div
             className="flex flex-row items-center cursor-pointer"
             onClick={handleDesktopClick}
           >
-            <img
-              className={`h-5 mr-3 ${
-                !desktopToggled ? styles.dropClosed : styles.dropOpen
-              }`}
-              src={NavBarArrow}
-              alt="arrow down"
-            />
             <h1 className="font-raleway">Apartments</h1>
             <img
               className={`h-5 mr-11 ml-3 ${
@@ -125,7 +107,7 @@ function NavBar() {
             className="mr-11 font-raleway"
             to="/contact"
           >
-            Contact
+            Contacto
           </Link>
         </div>
         <div className="block md:hidden">
@@ -147,26 +129,12 @@ function NavBar() {
           styles.mobileDrop
         } ${!toggled ? "-top-36" : "top-[56px]"} `}
       >
-        <Link
-          onClick={handleOnClick}
-          className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 z-50 font-raleway ${styles.dropDownLinks}`}
-          to="/about"
-        >
-          About
-        </Link>
 
         <div
           onClick={handleApartmentClick}
           className={`flex justify-center items-center py-4 bg-white border-b-[#4E6E82] cursor-pointer border-b-2 z-50 ${styles.dropDownLinks}`}
         >
           <h1 className="font-raleway text-[#4E6E82]">Apartments</h1>
-          <img
-            className={`h-5 absolute left-0 pl-4 ${
-              !apartmentToggled ? styles.dropClosed : styles.dropOpen
-            }`}
-            src={NavBarArrow}
-            alt="arrow down"
-          />
           <img
             className={`h-5 absolute right-0 pr-4 ${
               !apartmentToggled ? styles.dropClosed : styles.dropOpen
@@ -179,7 +147,7 @@ function NavBar() {
           className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
             styles.mobileDrop
           } ${
-            !toggled ? "-top-48" : !apartmentToggled ? "-top-2" : "top-[178px]"
+            !toggled ? "-top-48" : !apartmentToggled ? "-top-[4.1rem]" : "top-[117px]"
           } `}
         >
           {apartments.length !== 0 ? (
@@ -202,7 +170,7 @@ function NavBar() {
             className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
             to="/contact"
           >
-            Contact
+            Contacto
           </Link>
         </div>
 
