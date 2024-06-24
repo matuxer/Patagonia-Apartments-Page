@@ -13,8 +13,6 @@ button {
   float: none;
   margin: 0;
   padding: 10px;
-  background: none !important;
-  border: none;
   border-radius: 0;
   appearance: normal;
   -moz-appearance: normal;

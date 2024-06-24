@@ -127,7 +127,7 @@ function NavBar() {
       <div
         className={`md:hidden flex flex-col justify-center w-full z-50 fixed ${
           styles.mobileDrop
-        } ${!toggled ? "-top-36" : "top-[56px]"} `}
+        } ${!toggled ? "-top-10" : "top-[56px]"} `}
       >
 
         <div
