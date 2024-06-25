@@ -94,6 +94,7 @@ function CarouselComponent({ images, id }) {
           return (
             <img
               className="mb-10 rounded-md"
+              key={el}
               src={require(`../${el}`)}
               alt="..."
             />

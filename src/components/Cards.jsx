@@ -7,8 +7,6 @@ function Cards({ apartments, id }) {
       {apartments?.map((el) => {
         if (el.id !== id) {
             return <Card props={el} key={el.id} />;
-        } else {
-          return <></>
         }
       })}
     </div>

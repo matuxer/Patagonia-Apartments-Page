@@ -87,6 +87,7 @@ function NavBar() {
                 return (
                   <Link
                     onClick={handleDesktopClick}
+                    key={el.id}
                     className="font-raleway px-8 py-4 w-full border-b-2 border-b-[#4E6E82] text-center"
                     to={`/apartment/${el.id}`}
                   >
@@ -155,6 +156,7 @@ function NavBar() {
               return (
                 <Link
                   onClick={handleOnClick}
+                  key={el.id}
                   className={`flex justify-center py-4 bg-slate-100 border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
                   to={`/apartment/${el.id}`}
                 >
