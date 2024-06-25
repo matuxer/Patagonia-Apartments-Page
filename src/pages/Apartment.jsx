@@ -18,9 +18,14 @@ function Apartment() {
     let info = data[0].apartments.filter((el) => {
       return el.id === Number(id);
     });
-    setApartment(info[0]);
-    setApartments(data[0].apartments);
-    setLoading(false);
+
+    if (info.length > 0) {
+      setApartment(info[0]);
+      setApartments(data[0].apartments);
+      setLoading(false);
+    } else {
+      throw Error("No Apartment");
+    }
   }, [id]);
 
   if (loading) {
@@ -88,5 +93,16 @@ function Apartment() {
     );
   }
 }
+
+export const apartmentLoader = async ({ params }) => {
+  const id = parseInt(params.id, 10);
+  const apartment = data[0].apartments.find((apartment) => apartment.id === id);
+
+  if (apartment) {
+    return apartment;
+  } else {
+    throw new Response("No Apartment", { status: 404 });
+  }
+};
 
 export default Apartment;
