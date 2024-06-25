@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import ArrowLeft from "../images/arrow-sm-left-svgrepo-com.svg";
 import ArrowRight from "../images/arrow-sm-right-svgrepo-com.svg";
+import { useParams } from "react-router-dom";
 
-function CarouselComponent({ images }) {
+function CarouselComponent({ images, id }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [page, setPage] = useState(0)
 
   const handleHover = () => {
     setIsHovered(true);
@@ -63,6 +65,11 @@ function CarouselComponent({ images }) {
     );
   };
 
+  useEffect(() => {
+    setPage(0)
+  }, [id])
+  
+
   return (
     <div
       onMouseEnter={handleHover}
@@ -70,6 +77,8 @@ function CarouselComponent({ images }) {
       className="relative"
     >
       <Carousel
+        selectedItem={page}
+        onChange={(index) => setPage(index)}
         renderArrowPrev={renderArrowPrev}
         renderArrowNext={renderArrowNext}
         renderIndicator={renderCustomIndicator}

@@ -60,7 +60,7 @@ function Apartment() {
 
           {/* IMAGE CAROUSEL */}
           <div className="block px-3 md:pt-5 md:w-1/2">
-            <CarouselComponent images={apartment.images} />
+            <CarouselComponent images={apartment.images} id={id} />
           </div>
         </div>
 
