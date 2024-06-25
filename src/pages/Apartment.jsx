@@ -14,8 +14,6 @@ function Apartment() {
   const [apartments, setApartments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(id);
-
   useEffect(() => {
     let info = data[0].apartments.filter((el) => {
       return el.id === Number(id);
