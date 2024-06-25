@@ -81,7 +81,7 @@ function Apartment() {
         </div>
 
         {/* CARDS */}
-        <div className="w-full bg-[#f0f4f4]">
+        <div className="w-full border-t-2 border-t-[#4E6E82] bg-[#f0f4f4]">
           <Cards apartments={apartments} id={Number(id)} />
         </div>
       </div>

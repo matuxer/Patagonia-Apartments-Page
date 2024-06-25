@@ -67,7 +67,7 @@ function Home() {
             adapte a vos.
           </p>
         </div>
-        <div className="w-full bg-[#f0f4f4] mt-[244px] md:mt-[240px] ">
+        <div className="w-full bg-[#f0f4f4] border-t-2 border-t-[#4E6E82] mt-[244px] md:mt-[240px] ">
           <Cards apartments={apartments} />
         </div>
       </section>
