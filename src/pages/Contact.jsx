@@ -13,6 +13,8 @@ function Contact() {
             Completa el formulario y te contestaremos cuanto antes!
           </p>
         </div>
+
+        {/* Formulario de contacto */}
         <form className="w-full flex flex-col items-center px-4">
           <div className="flex flex-row gap-4 w-full">
             <div className="space-y-2 flex flex-col w-full">
@@ -78,10 +80,14 @@ function Contact() {
           </button>
         </form>
       </div>
+
+      {/* MAPA */}
       <div className="flex flex-col my-5 px-4 lg:w-full">
         <h1 className="font-raleway font-bold text-xl mb-2 lg:text-2xl">
           Donde Estamos
         </h1>
+
+        {/* Elemento que se usa para mostrar un mapa interactuable de Google */}
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2299.085486590548!2d-68.32549501573266!3d-54.81361393914818!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c231661cee9df%3A0x4d5c99e50a24c104!2sLeopoldo%20Lugones%201953%2C%20V9410%20Ushuaia%2C%20Tierra%20del%20Fuego!5e0!3m2!1ses-419!2sar!4v1719257344579!5m2!1ses-419!2sar"
           className="border-0 w-full h-72 rounded-md lg:h-96 "
