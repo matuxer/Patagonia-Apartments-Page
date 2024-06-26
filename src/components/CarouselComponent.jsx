@@ -3,12 +3,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import ArrowLeft from "../images/arrow-sm-left-svgrepo-com.svg";
 import ArrowRight from "../images/arrow-sm-right-svgrepo-com.svg";
-import { useParams } from "react-router-dom";
 
 function CarouselComponent({ images, id }) {
   const [isHovered, setIsHovered] = useState(false);
   const [page, setPage] = useState(0)
 
+  /* Funciones para controlar si el carrusel tiene hover */
   const handleHover = () => {
     setIsHovered(true);
   };
@@ -17,6 +17,7 @@ function CarouselComponent({ images, id }) {
     setIsHovered(false);
   };
 
+  /* Funciones para renderizar flechas de navegación del carrusel personalizadas */
   const renderArrowPrev = (clickHandler, hasPrev, label) =>
     hasPrev && (
       <button
@@ -39,7 +40,7 @@ function CarouselComponent({ images, id }) {
       </button>
     );
 
-
+  /* Función para renderizar indicadores de navegación del carrusel personalizados */
   const renderCustomIndicator = (onClickHandler, isSelected, index, label) => {
     if (isSelected) {
       return (
@@ -65,6 +66,7 @@ function CarouselComponent({ images, id }) {
     );
   };
 
+  /* Cada vez que se renderiza un Carrusel se devuelve a la primer página para evitar errores */
   useEffect(() => {
     setPage(0)
   }, [id])
@@ -90,6 +92,8 @@ function CarouselComponent({ images, id }) {
         swipeable={true}
         emulateTouch={true}
       >
+
+        {/* Se usa el método map para iterar el array de imagenes y crear un elemento img para cada una */}
         {images.map((el) => {
           return (
             <img
