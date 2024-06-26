@@ -1,3 +1,4 @@
+/* Son importadas las utilidades de tailwind para todo el proyecto */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
