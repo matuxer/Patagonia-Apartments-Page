@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import CardArrow from "../images/arrow-narrow-right-svgrepo-com.svg";
 
 function Card({ props }) {
+
+  /* Se declara un estilo para generar una imagen de fondo variable */
   const myStyle = {
     backgroundImage: `url(${require(`../${props.images[0]}`)})`,
     height: "250px",
@@ -11,6 +13,8 @@ function Card({ props }) {
     backgroundSize: "cover",
     borderRadius: "22px 22px 0 0",
   };
+
+  /* Cada Card es un elemento Link de que lleva a la página de apartment segun el id */
   return (
     <Link to={`/apartment/${props.id}`} className="group bg-white rounded-t-3xl rounded-b-md mx-14 w-11/12  cursor-pointer flex flex-col justify-between md:mx-0 md:my-5 md:w-10/12">
       <div
