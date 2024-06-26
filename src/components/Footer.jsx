@@ -11,6 +11,7 @@ function Footer() {
     <div>
       <div className={styles.footerBg}>
         <div className="pt-20 sm:pt-0 sm:flex sm:flex-col sm:items-center">
+
           {/* MENSAJE */}
           <div className="flex flex-col items-center">
             <h2 className="font-raleway text-white font-semibold tracking-widest">
@@ -20,6 +21,7 @@ function Footer() {
               Contactanos!
             </h1>
           </div>
+
           {/* DATOS */}
           <div className="flex flex-col items-center mt-9 gap-2">
             <div className="flex flex-row items-center">
@@ -43,6 +45,7 @@ function Footer() {
               </p>
             </div>
           </div>
+
           {/* REDES */}
           <div className="flex flex-row gap-3 justify-center mt-9">
             <a
@@ -69,6 +72,8 @@ function Footer() {
             </a>
           </div>
         </div>
+
+        {/* LOGO */}
         <div className="hidden sm:block">
           <img className="opacity-40" src={Logo} alt="footer logo" />
         </div>
