@@ -12,6 +12,7 @@ function Home() {
   const begin = useRef(null);
   const [apartments, setApartments] = useState([]);
 
+  /* Cuando se renderiza la página home por primera vez guarda dentro de 'apartments' todos los apartments disponibles dentro de db.json */
   useEffect(() => {
     setApartments(data[0].apartments);
   }, []);
@@ -31,6 +32,7 @@ function Home() {
               src={LogoWhite}
               alt="Header Logo"
             />
+            {/* Botón para bajar al contenido de la página */}
             <button
               className={`z-0 mt-2 md:mt-4`}
               onClick={() => {
@@ -53,7 +55,7 @@ function Home() {
         </div>
       </section>
 
-      {/* CONTENT */}
+      {/* CONTENIDO */}
       <section className="flex flex-col">
         <div
           ref={begin}
@@ -67,6 +69,8 @@ function Home() {
             adapte a vos.
           </p>
         </div>
+
+        {/* Se llama al componente Cards el cual va a renderiza las Cards de apartments */}
         <div className="w-full bg-[#f0f4f4] border-t-2 border-t-[#4E6E82] mt-[244px] md:mt-[240px] ">
           <Cards apartments={apartments} />
         </div>

@@ -2,6 +2,7 @@
     scroll-margin-top: 56px;
 }
 
+/* Estilos para generar una imagen de fondo en el Header con un efecto de blur */
 .homeHeader {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/ushuaia_cartel_canal_1.png');
     background-repeat: no-repeat;
