@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./PageNotFound.module.css";
 import { Link } from "react-router-dom";
 
+/* La página PageNotFound sera renderizada cada vez que el sitio web no sea capaz de entontrar el endpoint otorgado */
 function PageNotFound() {
   return (
     <div
@@ -14,6 +15,8 @@ function PageNotFound() {
         <p className="text-gray-600 font-raleway font-semibold md:text-xl dark:text-gray-400">
           Chan! Parece que el apartment que estas buscando no existe.
         </p>
+
+        {/* Botón que lleva a la página Home */}
         <Link
           to="/"
           className="inline-flex h-10 items-center justify-center rounded-md bg-[#4E6E82] px-6 text-sm font-semibold text-white shadow font-raleway duration-150 active:text-[#4E6E82] active:bg-white active:border-2 active:border-[#4E6E82] hover:bg-[#456477]"
