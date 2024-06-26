@@ -6,11 +6,14 @@ import Logo from "../images/Logo.svg"
 import NavBarArrow from "../images/arrow-down-svgrepo-com.svg";
 
 function NavBar() {
+  const [apartments, setApartments] = useState([]);
+
+  /* Estados para controlar si los menus dropdown estan activos o no */
   const [toggled, setToggled] = useState(false);
   const [apartmentToggled, setApartmentToggled] = useState(false);
   const [desktopToggled, setDesktopToggled] = useState(false);
-  const [apartments, setApartments] = useState([]);
 
+  /* Funciones que alternan el estado de los estados de los menus dropdown */
   const handleOnClick = () => {
     setToggled((prevState) => {
       return !prevState;
@@ -33,6 +36,7 @@ function NavBar() {
     });
   };
 
+  /* Cuando se renderiza la página home por primera vez guarda dentro de 'apartments' todos los apartments disponibles dentro de db.json y se setea el estado toggled como falso en caso de haber estado activo */
   useEffect(() => {
     setApartments(data[0].apartments);
     if (!toggled) {
@@ -44,6 +48,8 @@ function NavBar() {
     <div>
       <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:h-20 md:py-8">
         <div className="p-5">
+
+          {/* Botón que lleva a la página Home con el Logo de la página */}
           <Link
             onClick={() => {
               if (toggled) {
@@ -63,6 +69,8 @@ function NavBar() {
             />
           </Link>
         </div>
+
+        {/* Navegación que solo va a ser visible cuando se este en pantalla tamaño 768px o más (md:flex indica que a partir de tamaño md o 768px el elemento cambia a display: flex) */}
         <div className={`hidden md:flex md:flex-row ${styles.menuLinks}`}>
           <div
             className="flex flex-row items-center cursor-pointer"
@@ -77,11 +85,14 @@ function NavBar() {
               alt="arrow down"
             />
           </div>
+
+          {/* Menu desplegable que muestra los apartments */}
           <div
             className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] items-center p-0 ${
               desktopToggled ? `${styles.menuOpen}` : `${styles.menuClosed}`
             }`}
           >
+            {/* Se usa el método map para crear un elemento Link para cada apartment */}
             {apartments.length !== 0 ? (
               apartments?.map((el) => {
                 return (
@@ -111,7 +122,11 @@ function NavBar() {
             Contacto
           </Link>
         </div>
+
+        {/* Navegación que solo va a ser visible cuando la pantalla sea de tamaño 767px o menos */}
         <div className="block md:hidden">
+
+          {/* Botón tipo hamburguesa con animación usado para desplegar el menu de navegación para mobile */}
           <div className="wrap">
             <button
               className={toggled ? styles.open : ""}
@@ -125,6 +140,8 @@ function NavBar() {
           </div>
         </div>
       </div>
+
+      {/* Menu desplegable para mobile que se esconde detras de la NavBar y baja cuando es activado */}
       <div
         className={`md:hidden flex flex-col justify-center w-full z-50 fixed ${
           styles.mobileDrop
@@ -144,6 +161,8 @@ function NavBar() {
             alt="arrow down"
           />
         </div>
+
+        {/* Menu desplegable para mobile que muestra los apartments disponibles y se esconde detras de la NavBar, baja cuando es activado */}
         <div
           className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
             styles.mobileDrop
@@ -151,6 +170,8 @@ function NavBar() {
             !toggled ? "-top-48" : !apartmentToggled ? "-top-[4.1rem]" : "top-[117px]"
           } `}
         >
+
+          {/* Se utiliza el método map para generar un elemento Link para cada apartment disponible en el array de apartments */}
           {apartments.length !== 0 ? (
             apartments?.map((el) => {
               return (
@@ -176,6 +197,7 @@ function NavBar() {
           </Link>
         </div>
 
+        {/* Elemento div vacio que es usado para oscurecer el contenido del resto del sitio web cuando el menu desplegable de mobile sea activado */}
         <div
           className={`h-screen bg-black opacity-40 ${toggled ? "" : "hidden"} ${
             styles.blackMenu

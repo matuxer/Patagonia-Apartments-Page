@@ -1,3 +1,4 @@
+/*--- Estilos del botón tipo hamburguesa con animación ---*/
 .wrap {
   display: block;
   clear: both;
@@ -6,7 +7,6 @@
   vertical-align: middle;
   margin: 0 30px;
 }
-/*--- Fancy Button ---*/
 button {
   display: inline-block;
   right: 15px;
@@ -58,10 +58,6 @@ button.open span:last-of-type {
   bottom: 6px;
 }
 
-.mobileDrop {
-  transition: 0.5s;
-}
-
 .menuLinks {
   color: #4e6e82;
   font-weight: bold;
@@ -74,6 +70,11 @@ button.open span:last-of-type {
   font-weight: bold;
   font-size: large;
   letter-spacing: 4px;
+}
+
+/* Estilos que añaden efecto de animación a los menus desplegables */
+.mobileDrop {
+  transition: 0.5s;
 }
 
 .dropClosed {
