@@ -167,7 +167,7 @@ function NavBar() {
           className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
             styles.mobileDrop
           } ${
-            !toggled ? "-top-48" : !apartmentToggled ? "-top-[4.1rem]" : "top-[117px]"
+            !toggled ? "-top-[23.2rem]" : !apartmentToggled ? "-top-[15.6rem]" : "top-[117px]"
           } `}
         >
 

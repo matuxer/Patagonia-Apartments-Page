@@ -32,7 +32,15 @@
         "location": "Edificio en Leopoldo Lugones 1953, segundo piso.",
         "description_1": "Monoambiente de 30 m2 totalmente equipado para 2 personas.",
         "description_2": "Podemos armar una cama doble o 2 camas individuales.",
-        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas."
+        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": false,
+          "parking": false,
+          "smoking_allowed": false
+        }
       },
       {
         "id": 2,
@@ -65,7 +73,15 @@
         "location": "Edificio en Leopoldo Lugones 1953, segundo piso.",
         "description_1": "Monoambiente de 30 m2 totalmente equipado para 2 personas.",
         "description_2": "Podemos armar una cama doble o 2 camas individuales.",
-        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas."
+        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": false,
+          "parking": false,
+          "smoking_allowed": false
+        }
       },
       {
         "id": 3,
@@ -87,7 +103,84 @@
         "location": "Edificio Lugones 1953, primer piso.",
         "description_1": "Monoambiente de 30 m2 totalmente equipado para 2 personas.",
         "description_2": "Podemos armar una cama doble o 2 camas individuales.",
-        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente."
+        "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": false,
+          "parking": false,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 4,
+        "name": "Andes Loft",
+        "images": [
+          "images/apartment_1/A1.jpg",
+          "images/apartment_1/A2.jpg",
+          "images/apartment_1/A3.jpg",
+          "images/apartment_1/A4.jpg",
+          "images/apartment_1/A5.jpg"
+        ],
+        "location": "Edificio Andes Loft, tercer piso.",
+        "description_1": "Espacioso loft de 40 m2 con vistas a la montaña.",
+        "description_2": "Equipado para 3 personas con cama doble y sofá cama.",
+        "description_3": "Ubicación: A 500 metros del centro de la ciudad y a 200 metros del parque central.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": true,
+          "parking": true,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 5,
+        "name": "Mountain Retreat",
+        "images": [
+          "images/apartment_2/B1.jpg",
+          "images/apartment_2/B2.jpg",
+          "images/apartment_2/B3.jpg",
+          "images/apartment_2/B4.jpg",
+          "images/apartment_2/B5.jpg"
+        ],
+        "location": "Edificio Mountain Retreat, primer piso.",
+        "description_1": "Departamento de 35 m2 ideal para escapadas románticas.",
+        "description_2": "Equipado para 2 personas con cama king size.",
+        "description_3": "Ubicación: A 700 metros del centro de la ciudad y cerca de senderos de montaña.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": false,
+          "parking": true,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 6,
+        "name": "Urban Oasis",
+        "images": [
+          "images/apartment_3/C1.jpg",
+          "images/apartment_3/C2.jpg",
+          "images/apartment_3/C3.jpg",
+          "images/apartment_3/C4.jpg",
+          "images/apartment_3/C5.jpg"
+        ],
+        "location": "Edificio Urban Oasis, cuarto piso.",
+        "description_1": "Departamento moderno de 50 m2 con todas las comodidades.",
+        "description_2": "Equipado para 4 personas con dos habitaciones y sala de estar.",
+        "description_3": "Ubicación: En el corazón de la ciudad, a pasos de restaurantes y tiendas.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": true,
+          "parking": true,
+          "smoking_allowed": true
+        }
       }
     ]
   }
