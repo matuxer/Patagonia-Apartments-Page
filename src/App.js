@@ -8,10 +8,11 @@ import {
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import Contact from "./pages/Contact";
-import Apartment, { apartmentLoader } from "./pages/Apartment";
+import Apartment from "./pages/Apartment";
 import Footer from "./components/Footer";
 import ScrollToTop from "./helper/ScrollToTop";
 import PageNotFound from "./pages/PageNotFound";
+import { apartmentLoader } from "./helper/controllers";
 
 /* Es creada la estructura principal de las rutas del proyecto */
 const router = createBrowserRouter(
