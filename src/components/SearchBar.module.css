@@ -1,0 +1,67 @@
+/* From Uiverse.io by LeonKohli */
+.ui_input_container {
+  position: relative;
+  width: 251px;
+}
+
+.ui_input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+  transition: border-color 0.3s;
+}
+
+.ui_input:focus {
+  border-color: #4e6e82;
+}
+
+.ui_input_underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #4e6e82;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.ui_input:focus + .ui_input_underline {
+  transform: scaleX(1);
+}
+
+.ui_input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(108, 99, 255, 0.1);
+  transition: width 0.3s;
+}
+
+.ui_input:focus ~ .ui_input_highlight {
+  width: 100%;
+}
+
+.ui_input_icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  transition: color 0.3s;
+}
+
+.ui_input:focus ~ .ui_input_icon {
+  color: #4e6e82;
+}
+
+.ui_input_icon svg {
+  width: 20px;
+  height: 20px;
+}

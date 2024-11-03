@@ -4,6 +4,7 @@ import styles from "./NavBar.module.css";
 import Logo from "../images/Logo.svg";
 import NavBarArrow from "../images/arrow-down-svgrepo-com.svg";
 import { obtenerDatos } from "../helper/controllers";
+import SearchBar from "./SearchBar";
 
 function NavBar() {
   const [apartments, setApartments] = useState([]);
@@ -125,7 +126,10 @@ function NavBar() {
         </div>
 
         {/* Navegación que solo va a ser visible cuando la pantalla sea de tamaño 767px o menos */}
-        <div className="block md:hidden">
+        <div className="w-full flex justify-between md:hidden">
+          
+          <SearchBar />
+
           {/* Botón tipo hamburguesa con animación usado para desplegar el menu de navegación para mobile */}
           <div className="wrap">
             <button
