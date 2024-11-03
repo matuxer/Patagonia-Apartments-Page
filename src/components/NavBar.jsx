@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
-import data from "../db.json";
-import Logo from "../images/Logo.svg"
+import Logo from "../images/Logo.svg";
 import NavBarArrow from "../images/arrow-down-svgrepo-com.svg";
+import { obtenerDatos } from "../helper/controllers";
 
 function NavBar() {
   const [apartments, setApartments] = useState([]);
@@ -38,7 +38,13 @@ function NavBar() {
 
   /* Cuando se renderiza la página home por primera vez guarda dentro de 'apartments' todos los apartments disponibles dentro de db.json y se setea el estado toggled como falso en caso de haber estado activo */
   useEffect(() => {
-    setApartments(data[0].apartments);
+    obtenerDatos("/db.json")
+      .then((responseData) => {
+        setApartments(responseData[0].apartments);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
     if (!toggled) {
       setApartmentToggled(false);
     }
@@ -48,7 +54,6 @@ function NavBar() {
     <div>
       <div className="bg-white h-14 flex items-center justify-between border-b-[#4E6E82] border-b-2 z-[100] w-full fixed md:h-20 md:py-8">
         <div className="p-5">
-
           {/* Botón que lleva a la página Home con el Logo de la página */}
           <Link
             onClick={() => {
@@ -62,11 +67,7 @@ function NavBar() {
             }}
             to="/"
           >
-            <img
-              className="h-10 md:h-12 md:ml-5"
-              src={Logo}
-              alt="Logo"
-            />
+            <img className="h-10 md:h-12 md:ml-5" src={Logo} alt="Logo" />
           </Link>
         </div>
 
@@ -125,7 +126,6 @@ function NavBar() {
 
         {/* Navegación que solo va a ser visible cuando la pantalla sea de tamaño 767px o menos */}
         <div className="block md:hidden">
-
           {/* Botón tipo hamburguesa con animación usado para desplegar el menu de navegación para mobile */}
           <div className="wrap">
             <button
@@ -147,7 +147,6 @@ function NavBar() {
           styles.mobileDrop
         } ${!toggled ? "-top-10" : "top-[56px]"} `}
       >
-
         <div
           onClick={handleApartmentClick}
           className={`flex justify-center items-center py-4 bg-white border-b-[#4E6E82] cursor-pointer border-b-2 z-50 ${styles.dropDownLinks}`}
@@ -167,10 +166,13 @@ function NavBar() {
           className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
             styles.mobileDrop
           } ${
-            !toggled ? "-top-[23.2rem]" : !apartmentToggled ? "-top-[15.6rem]" : "top-[117px]"
+            !toggled
+              ? "-top-[23.2rem]"
+              : !apartmentToggled
+              ? "-top-[15.6rem]"
+              : "top-[117px]"
           } `}
         >
-
           {/* Se utiliza el método map para generar un elemento Link para cada apartment disponible en el array de apartments */}
           {apartments.length !== 0 ? (
             apartments?.map((el) => {
