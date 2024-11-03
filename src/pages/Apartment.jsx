@@ -114,35 +114,35 @@ function Apartment() {
           </p>
         </div>
 
-        <div>
-          <h2 className="pl-4 font-raleway font-bold text-xl">Servicios</h2>
-          <div className="grid grid-cols-2 px-5 my-5">
-            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
-              <img src={wifiIcon} className="h-5 mr-2" alt="Wifi Icon" />
+        <div className="md:w-1/2 md:pl-[144px]">
+          <h2 className="pl-4 font-raleway font-bold text-xl md:text-2xl">Servicios</h2>
+          <div className="grid grid-cols-2 px-5 my-5 md:gap-x-0">
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
+              <img src={wifiIcon} className="h-5 mr-2 md:h-6 md:mr-3" alt="Wifi Icon" />
               Wifi:&nbsp;<strong>{feat.wifi ? "SI" : "NO"}</strong>
             </p>
-            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
-              <img src={kitchenIcon} className="h-5 mr-2" alt="Kitchen Icon" />
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
+              <img src={kitchenIcon} className="h-5 mr-2 md:h-6 md:mr-3" alt="Kitchen Icon" />
               Cocina:&nbsp;<strong>{feat.kitchen ? "SI" : "NO"}</strong>
             </p>
-            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
               <img
                 src={temperatureIcon}
-                className="h-5 mr-2"
+                className="h-5 mr-2 md:h-6 md:mr-3"
                 alt="Temperature Icon"
               />
               Calefacción:&nbsp;<strong>{feat.heating ? "SI" : "NO"}</strong>
             </p>
-            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
-              <img src={parkingIcon} className="h-6 mr-1" alt="Parking Icon" />
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
+              <img src={parkingIcon} className="h-6 mr-1 md:h-7 md:mr-2" alt="Parking Icon" />
               Estacionamiento:&nbsp;<strong>{feat.parking ? "SI" : "NO"}</strong>
             </p>
-            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
-              <img src={petsIcon} className="h-5 mr-2" alt="Pets Icon" />
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
+              <img src={petsIcon} className="h-5 mr-2 md:h-6 md:mr-3" alt="Pets Icon" />
               Mascotas:&nbsp;<strong>{feat.pets_allowed ? "SI" : "NO"}</strong>
             </p>
-            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
-              <img src={smokingIcon} className="h-5 mr-2" alt="Smoking Icon" />
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
+              <img src={smokingIcon} className="h-5 mr-2 md:h-6 md:mr-3" alt="Smoking Icon" />
               Fumar:&nbsp;<strong>{feat.smoking_allowed ? "SI" : "NO"}</strong>
             </p>
           </div>
