@@ -73,61 +73,66 @@ function NavBar() {
         </div>
 
         {/* Navegación que solo va a ser visible cuando se este en pantalla tamaño 768px o más (md:flex indica que a partir de tamaño md o 768px el elemento cambia a display: flex) */}
-        <div className={`hidden md:flex md:flex-row ${styles.menuLinks}`}>
-          <div
-            className="flex flex-row items-center cursor-pointer"
-            onClick={handleDesktopClick}
-          >
-            <h1 className="font-raleway">Apartments</h1>
-            <img
-              className={`h-5 mr-11 ml-3 ${
-                !desktopToggled ? styles.dropClosed : styles.dropOpen
-              }`}
-              src={NavBarArrow}
-              alt="arrow down"
-            />
-          </div>
+        <div
+          className={`hidden w-full justify-between md:flex md:flex-row ${styles.menuLinks}`}
+        >
+          <SearchBar />
 
-          {/* Menu desplegable que muestra los apartments */}
-          <div
-            className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] items-center p-0 ${
-              desktopToggled ? `${styles.menuOpen}` : `${styles.menuClosed}`
-            }`}
-          >
-            {/* Se usa el método map para crear un elemento Link para cada apartment */}
-            {apartments.length !== 0 ? (
-              apartments?.map((el) => {
-                return (
-                  <Link
-                    onClick={handleDesktopClick}
-                    key={el.id}
-                    className="font-raleway px-8 py-4 w-full border-b-2 border-b-[#4E6E82] text-center"
-                    to={`/apartment/${el.id}`}
-                  >
-                    {el.name}
-                  </Link>
-                );
-              })
-            ) : (
-              <></>
-            )}
+          <div className="flex flex-row select-none">
+            <div
+              className="flex flex-row items-center cursor-pointer"
+              onClick={handleDesktopClick}
+            >
+              <h1 className="font-raleway ">Apartments</h1>
+              <img
+                className={`h-5 mr-11 ml-3 ${
+                  !desktopToggled ? styles.dropClosed : styles.dropOpen
+                }`}
+                src={NavBarArrow}
+                alt="arrow down"
+              />
+            </div>
+
+            {/* Menu desplegable que muestra los apartments */}
+            <div
+              className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] items-center p-0 ${
+                desktopToggled ? `${styles.menuOpen}` : `${styles.menuClosed}`
+              }`}
+            >
+              {/* Se usa el método map para crear un elemento Link para cada apartment */}
+              {apartments.length !== 0 ? (
+                apartments?.map((el) => {
+                  return (
+                    <Link
+                      onClick={handleDesktopClick}
+                      key={el.id}
+                      className="font-raleway px-8 py-4 w-full border-b-2 border-b-[#4E6E82] text-center"
+                      to={`/apartment/${el.id}`}
+                    >
+                      {el.name}
+                    </Link>
+                  );
+                })
+              ) : (
+                <></>
+              )}
+            </div>
+            <Link
+              onClick={() => {
+                if (desktopToggled) {
+                  handleDesktopClick();
+                }
+              }}
+              className="mr-11 font-raleway flex items-center"
+              to="/contact"
+            >
+              Contacto
+            </Link>
           </div>
-          <Link
-            onClick={() => {
-              if (desktopToggled) {
-                handleDesktopClick();
-              }
-            }}
-            className="mr-11 font-raleway"
-            to="/contact"
-          >
-            Contacto
-          </Link>
         </div>
 
         {/* Navegación que solo va a ser visible cuando la pantalla sea de tamaño 767px o menos */}
         <div className="w-full flex justify-between md:hidden">
-          
           <SearchBar />
 
           {/* Botón tipo hamburguesa con animación usado para desplegar el menu de navegación para mobile */}
@@ -147,7 +152,7 @@ function NavBar() {
 
       {/* Menu desplegable para mobile que se esconde detras de la NavBar y baja cuando es activado */}
       <div
-        className={`md:hidden flex flex-col justify-center w-full z-50 fixed ${
+        className={`md:hidden flex flex-col justify-center w-full z-50 fixed select-none ${
           styles.mobileDrop
         } ${!toggled ? "-top-10" : "top-[56px]"} `}
       >

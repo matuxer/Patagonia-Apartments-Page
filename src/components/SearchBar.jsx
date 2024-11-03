@@ -3,7 +3,7 @@ import styles from "./SearchBar.module.css";
 
 function SearchBar() {
   return (
-    <div className={styles.ui_input_container}>
+    <div className={`md:ml-5 ${styles.ui_input_container}`}>
       <input
         required=""
         placeholder="Búsqueda de Apartments ..."
