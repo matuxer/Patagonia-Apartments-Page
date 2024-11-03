@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./Home.module.css";
 import { useRef } from "react";
 import Cards from "../components/Cards";
-import data from "../db.json";
 import { useState } from "react";
 import { useEffect } from "react";
 import LogoWhite from "../images/LogoWhite.svg";
 import HeaderArrow from "../images/arrow-circle-down-svgrepo-com.svg";
+import { obtenerDatos } from "../helper/controllers";
 
 function Home() {
   const begin = useRef(null);
@@ -14,7 +14,13 @@ function Home() {
 
   /* Cuando se renderiza la página home por primera vez guarda dentro de 'apartments' todos los apartments disponibles dentro de db.json */
   useEffect(() => {
-    setApartments(data[0].apartments);
+    obtenerDatos("/db.json")
+      .then((responseData) => {
+        setApartments(responseData[0].apartments);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      })
   }, []);
 
   return (
