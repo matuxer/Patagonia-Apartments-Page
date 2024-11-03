@@ -6,13 +6,29 @@ import CarouselComponent from "../components/CarouselComponent";
 import LocationIcon from "../images/location-pin-alt-1-svgrepo-com.svg";
 import RulerIcon from "../images/ruler-svgrepo-com.svg";
 import BedIcon from "../images/bed-svgrepo-com.svg";
+import temperatureIcon from "../images/temperature-svgrepo-com.svg";
+import smokingIcon from "../images/smoking-cigarette-svgrepo-com.svg";
+import kitchenIcon from "../images/kitchen-pack-cooking-svgrepo-com.svg";
+import parkingIcon from "../images/parking-svgrepo-com.svg";
+import petsIcon from "../images/pets-svgrepo-com.svg";
+import wifiIcon from "../images/wifi-svgrepo-com.svg";
 import { obtenerDatos } from "../helper/controllers";
 
 function Apartment() {
+  const featuresInitialState = {
+    wifi: false,
+    kitchen: false,
+    heating: false,
+    pets_allowed: false,
+    parking: false,
+    smoking_allowed: false,
+  };
+
   const { id } = useParams();
   const [apartment, setApartment] = useState(null);
   const [apartments, setApartments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [feat, setFeat] = useState(featuresInitialState);
 
   /* Cuando se renderiza la página se busca y guarda la información de los apartments */
   useEffect(() => {
@@ -24,6 +40,12 @@ function Apartment() {
           return el.id === Number(id);
         });
         setApartment(info[0]);
+        if (info[0].features) {
+          setFeat((prevState) => ({
+            ...prevState,
+            ...info[0].features,
+          }));
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -90,6 +112,40 @@ function Apartment() {
           <p className="font-raleway text-sm font-medium text-justify px-1 sm:px-0">
             {apartment.description_3}
           </p>
+        </div>
+
+        <div>
+          <h2 className="pl-4 font-raleway font-bold text-xl">Servicios</h2>
+          <div className="grid grid-cols-2 px-5 my-5">
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+              <img src={wifiIcon} className="h-5 mr-2" alt="Wifi Icon" />
+              Wifi:&nbsp;<strong>{feat.wifi ? "SI" : "NO"}</strong>
+            </p>
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+              <img src={kitchenIcon} className="h-5 mr-2" alt="Kitchen Icon" />
+              Cocina:&nbsp;<strong>{feat.kitchen ? "SI" : "NO"}</strong>
+            </p>
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+              <img
+                src={temperatureIcon}
+                className="h-5 mr-2"
+                alt="Temperature Icon"
+              />
+              Calefacción:&nbsp;<strong>{feat.heating ? "SI" : "NO"}</strong>
+            </p>
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+              <img src={parkingIcon} className="h-6 mr-1" alt="Parking Icon" />
+              Estacionamiento:&nbsp;<strong>{feat.parking ? "SI" : "NO"}</strong>
+            </p>
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+              <img src={petsIcon} className="h-5 mr-2" alt="Pets Icon" />
+              Mascotas:&nbsp;<strong>{feat.pets_allowed ? "SI" : "NO"}</strong>
+            </p>
+            <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 ">
+              <img src={smokingIcon} className="h-5 mr-2" alt="Smoking Icon" />
+              Fumar:&nbsp;<strong>{feat.smoking_allowed ? "SI" : "NO"}</strong>
+            </p>
+          </div>
         </div>
 
         {/* Se llama al componente Cards y se le pasa el id del apartment actual para mostrar los otros apartments salteando el actual */}
