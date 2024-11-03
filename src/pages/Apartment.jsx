@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import data from "../db.json";
 import Cards from "../components/Cards";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CarouselComponent from "../components/CarouselComponent";
 import LocationIcon from "../images/location-pin-alt-1-svgrepo-com.svg";
 import RulerIcon from "../images/ruler-svgrepo-com.svg";
 import BedIcon from "../images/bed-svgrepo-com.svg";
+import { obtenerDatos } from "../helper/controllers";
 
 function Apartment() {
   const { id } = useParams();
@@ -14,15 +14,23 @@ function Apartment() {
   const [apartments, setApartments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  /* Cuando se renderiza la página se guarda la información de los apartments */
+  /* Cuando se renderiza la página se busca y guarda la información de los apartments */
   useEffect(() => {
-    let info = data[0].apartments.filter((el) => {
-      return el.id === Number(id);
-    });
-
-    setApartment(info[0]);
-    setApartments(data[0].apartments);
-    setLoading(false);
+    setLoading(true);
+    obtenerDatos("/db.json")
+      .then((responseData) => {
+        setApartments(responseData[0].apartments);
+        let info = responseData[0].apartments.filter((el) => {
+          return el.id === Number(id);
+        });
+        setApartment(info[0]);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [id]);
 
   if (loading) {
@@ -92,18 +100,5 @@ function Apartment() {
     );
   }
 }
-
-/* Función que usa el router como loader para controlar que el id del apartment exista */
-export const apartmentLoader = async ({ params }) => {
-  const id = parseInt(params.id, 10);
-  const apartment = data[0].apartments.find((apartment) => apartment.id === id);
-
-  /* Si el apartment existe se retorna, caso contrario, se genera un Response de tipo 404 para avisarle al router de que no existe */
-  if (apartment) {
-    return apartment;
-  } else {
-    throw new Response("No Apartment", { status: 404 });
-  }
-};
 
 export default Apartment;
