@@ -26,7 +26,7 @@ function Home() {
   return (
     <div className="bg-slate-700 h-full pt-[56px] md:pt-[80px]">
       {/* HEADER */}
-      <section className=" flex justify-center h-full ">
+    <section className=" flex justify-center h-full select-none ">
         <div className={`${styles.homeHeader}`}></div>
         <div className="absolute flex flex-row justify-center items-center w-full gap-1 sm:gap-2 md:gap-4 h-[450px] md:h-screen">
           <h1 className="text-white text-2xl font-normal font-oswald pb-16 ml-[18px] sm:ml-5 sm:text-3xl md:text-4xl md:ml-[25px] lg:text-5xl lg:ml-8 lg:pb-20">
