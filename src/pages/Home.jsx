@@ -6,11 +6,37 @@ import { useState } from "react";
 import { useEffect } from "react";
 import LogoWhite from "../images/LogoWhite.svg";
 import HeaderArrow from "../images/arrow-circle-down-svgrepo-com.svg";
+import temperatureIcon from "../images/temperature-svgrepo-com.svg";
+import smokingIcon from "../images/smoking-cigarette-svgrepo-com.svg";
+import kitchenIcon from "../images/kitchen-pack-cooking-svgrepo-com.svg";
+import parkingIcon from "../images/parking-svgrepo-com.svg";
+import petsIcon from "../images/pets-svgrepo-com.svg";
+import wifiIcon from "../images/wifi-svgrepo-com.svg";
 import { obtenerDatos } from "../helper/controllers";
 
 function Home() {
+  const filtersInitialState = {
+    wifi: true,
+    kitchen: false,
+    heating: false,
+    pets_allowed: false,
+    parking: false,
+    smoking_allowed: false,
+  };
+
   const begin = useRef(null);
   const [apartments, setApartments] = useState([]);
+  const [filters, setFilters] = useState(filtersInitialState);
+
+  const handleFilterButton = (e) => {
+    const value = e.currentTarget.value;
+    setFilters((prevState) => {
+      return {
+        ...prevState,
+        [value]: !prevState[value],
+      };
+    });
+  };
 
   /* Cuando se renderiza la página home por primera vez guarda dentro de 'apartments' todos los apartments disponibles dentro de db.json */
   useEffect(() => {
@@ -20,13 +46,13 @@ function Home() {
       })
       .catch((err) => {
         console.log(err.message);
-      })
+      });
   }, []);
 
   return (
     <div className="bg-slate-700 h-full pt-[56px] md:pt-[80px]">
       {/* HEADER */}
-    <section className=" flex justify-center h-full select-none ">
+      <section className=" flex justify-center h-full select-none ">
         <div className={`${styles.homeHeader}`}></div>
         <div className="absolute flex flex-row justify-center items-center w-full gap-1 sm:gap-2 md:gap-4 h-[450px] md:h-screen">
           <h1 className="text-white text-2xl font-normal font-oswald pb-16 ml-[18px] sm:ml-5 sm:text-3xl md:text-4xl md:ml-[25px] lg:text-5xl lg:ml-8 lg:pb-20">
@@ -78,6 +104,92 @@ function Home() {
 
         {/* Se llama al componente Cards el cual va a renderiza las Cards de apartments */}
         <div className="w-full bg-[#f0f4f4] border-t-2 border-t-[#4E6E82] mt-[244px] md:mt-[240px] ">
+          <div className="w-full flex flex-row overflow-x-scroll pl-4 py-3 scroll:overflow-hidden lg:justify-center ">
+            <button
+              className={`${
+                filters.wifi ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
+              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              value={"wifi"}
+              onClick={handleFilterButton}
+            >
+              <img
+                src={wifiIcon}
+                className="h-5 mr-2 md:h-6 md:mr-3"
+                alt="Wifi Icon"
+              />
+              Wifi
+            </button>
+            <button
+              className={`${
+                filters.kitchen ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
+              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              value={"kitchen"}
+              onClick={handleFilterButton}
+            >
+              <img
+                src={kitchenIcon}
+                className="h-5 mr-2 md:h-6 md:mr-3"
+                alt="Kitchen Icon"
+              />
+              Cocina
+            </button>
+            <button
+              className={`${
+                filters.heating ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
+              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              value={"heating"}
+              onClick={handleFilterButton}
+            >
+              <img
+                src={temperatureIcon}
+                className="h-5 mr-2 md:h-6 md:mr-3"
+                alt="Temperature Icon"
+              />
+              Calefacción
+            </button>
+            <button
+              className={`${
+                filters.parking ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
+              } select-none flex mr-4 border-2 pr-10 rounded-full lg:pr-4`}
+              value={"parking"}
+              onClick={handleFilterButton}
+            >
+              <img
+                src={parkingIcon}
+                className="h-6 mr-1 md:h-7 md:mr-2"
+                alt="Parking Icon"
+              />
+              Estacionamiento
+            </button>
+            <button
+              className={`${
+                filters.pets_allowed ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
+              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              value={"pets_allowed"}
+              onClick={handleFilterButton}
+            >
+              <img
+                src={petsIcon}
+                className="h-5 mr-2 md:h-6 md:mr-3"
+                alt="Pets Icon"
+              />
+              Mascotas
+            </button>
+            <button
+              className={`${
+                filters.smoking_allowed ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
+              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              value={"smoking_allowed"}
+              onClick={handleFilterButton}
+            >
+              <img
+                src={smokingIcon}
+                className="h-5 mr-2 md:h-6 md:mr-3"
+                alt="Smoking Icon"
+              />
+              Fumar
+            </button>
+          </div>
           <Cards apartments={apartments} />
         </div>
       </section>
