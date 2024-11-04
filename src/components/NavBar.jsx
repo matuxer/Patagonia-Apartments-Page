@@ -95,7 +95,7 @@ function NavBar() {
 
             {/* Menu desplegable que muestra los apartments */}
             <div
-              className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] items-center p-0 ${
+              className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] h-[400px] overflow-y-scroll items-center p-0 ${
                 desktopToggled ? `${styles.menuOpen}` : `${styles.menuClosed}`
               }`}
             >
@@ -172,17 +172,18 @@ function NavBar() {
 
         {/* Menu desplegable para mobile que muestra los apartments disponibles y se esconde detras de la NavBar, baja cuando es activado */}
         <div
-          className={`md:hidden flex flex-col justify-center w-full z-40 fixed ${
+          className={`md:hidden h-[400px] flex flex-col justify-center w-full z-40 fixed ${
             styles.mobileDrop
           } ${
             !toggled
-              ? "-top-[23.2rem]"
+              ? "-top-[22.2rem]"
               : !apartmentToggled
-              ? "-top-[15.6rem]"
-              : "top-[117px]"
+              ? "-top-[14rem]"
+              : "top-[117px] "
           } `}
         >
-          {/* Se utiliza el método map para generar un elemento Link para cada apartment disponible en el array de apartments */}
+          <div className={`overflow-y-scroll`}>
+            {/* Se utiliza el método map para generar un elemento Link para cada apartment disponible en el array de apartments */}
           {apartments.length !== 0 ? (
             apartments?.map((el) => {
               return (
@@ -199,9 +200,10 @@ function NavBar() {
           ) : (
             <></>
           )}
+          </div>
           <Link
             onClick={handleOnClick}
-            className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
+            className={`flex justify-center py-4 bg-white border-b-[#4E6E82] border-t-[#4E6E82] border-y-2 font-raleway ${styles.dropDownLinks}`}
             to="/contact"
           >
             Contacto
