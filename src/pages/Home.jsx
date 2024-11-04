@@ -16,7 +16,7 @@ import { obtenerDatos } from "../helper/controllers";
 
 function Home() {
   const filtersInitialState = {
-    wifi: true,
+    wifi: false,
     kitchen: false,
     heating: false,
     pets_allowed: false,
@@ -104,11 +104,11 @@ function Home() {
 
         {/* Se llama al componente Cards el cual va a renderiza las Cards de apartments */}
         <div className="w-full bg-[#f0f4f4] border-t-2 border-t-[#4E6E82] mt-[244px] md:mt-[240px] ">
-          <div className="w-full flex flex-row overflow-x-scroll pl-4 py-3 scroll:overflow-hidden lg:justify-center ">
+          <div className="w-full flex flex-row overflow-x-scroll pl-4 py-3 scroll:overflow-hidden lg:pt-5  lg:justify-center ">
             <button
               className={`${
                 filters.wifi ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
-              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              } z-0 duration-100 select-none flex mr-4 border-2 pr-9 rounded-full font-raleway  font-semibold lg:pr-4`}
               value={"wifi"}
               onClick={handleFilterButton}
             >
@@ -122,7 +122,7 @@ function Home() {
             <button
               className={`${
                 filters.kitchen ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
-              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              } z-0 duration-100 select-none flex mr-4 border-2 pr-9 rounded-full font-raleway  font-semibold lg:pr-4`}
               value={"kitchen"}
               onClick={handleFilterButton}
             >
@@ -136,7 +136,7 @@ function Home() {
             <button
               className={`${
                 filters.heating ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
-              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              } z-0 duration-100 select-none flex mr-4 border-2 pr-9 rounded-full font-raleway font-semibold lg:pr-4`}
               value={"heating"}
               onClick={handleFilterButton}
             >
@@ -150,7 +150,7 @@ function Home() {
             <button
               className={`${
                 filters.parking ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
-              } select-none flex mr-4 border-2 pr-10 rounded-full lg:pr-4`}
+              } z-0 duration-100 select-none flex mr-4 border-2 pr-10 rounded-full font-raleway font-semibold lg:pr-4`}
               value={"parking"}
               onClick={handleFilterButton}
             >
@@ -164,7 +164,7 @@ function Home() {
             <button
               className={`${
                 filters.pets_allowed ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
-              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              } z-0 duration-100 select-none flex mr-4 border-2 pr-9 rounded-full font-raleway  font-semibold lg:pr-4`}
               value={"pets_allowed"}
               onClick={handleFilterButton}
             >
@@ -178,7 +178,7 @@ function Home() {
             <button
               className={`${
                 filters.smoking_allowed ? "border-[#4E6E82] bg-[#e5e7e7]" : ""
-              } select-none flex mr-4 border-2 pr-9 rounded-full lg:pr-4`}
+              } z-0 duration-100 select-none flex mr-4 border-2 pr-9 rounded-full font-raleway  font-semibold lg:pr-4`}
               value={"smoking_allowed"}
               onClick={handleFilterButton}
             >
@@ -190,7 +190,7 @@ function Home() {
               Fumar
             </button>
           </div>
-          <Cards apartments={apartments} />
+          <Cards apartments={apartments} filters={filters} />
         </div>
       </section>
     </div>
