@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         "raleway": ["Raleway", "sans-serif"],
         "oswald": ["Oswald", "sans-serif"],
+      },
+      screens: {
+        'scroll': '880px',
       }
     },
   },
