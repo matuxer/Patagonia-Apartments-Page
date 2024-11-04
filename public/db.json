@@ -76,11 +76,11 @@
         "description_3": "Ubicación: A 400 metros de la calle San Martín, a 300 metros del Paseo de las Rosas, el polideportivo y la pista de patinaje sobre hielo, a 500 metros del cartel de Ushuaia y a 12 cuadras del puerto. El supermercado está enfrente. Desde la ventana, hacia el lateral izquierdo se puede ver el Canal Beagle y el puerto. Contiguo a Patagonia Apartment II, puede ser una buena opción para 4 personas.",
         "features": {
           "wifi": true,
-          "kitchen": true,
+          "kitchen": false,
           "heating": true,
           "pets_allowed": false,
           "parking": false,
-          "smoking_allowed": false
+          "smoking_allowed": true
         }
       },
       {
@@ -180,6 +180,138 @@
           "pets_allowed": true,
           "parking": true,
           "smoking_allowed": true
+        }
+      },
+      {
+        "id": 7,
+        "name": "Vista al Mar",
+        "images": [
+          "images/apartment_1/A3.jpg",
+          "images/apartment_1/A5.jpg",
+          "images/apartment_1/A7.jpg",
+          "images/apartment_1/A9.jpg"
+        ],
+        "location": "Edificio Vista Marítima, segundo piso.",
+        "description_1": "Luminoso apartamento de 45 m2 con vistas al océano.",
+        "description_2": "Equipado para 2 personas con cama queen y cocina completa.",
+        "description_3": "Ubicación: Frente al puerto, ideal para disfrutar del paisaje marítimo.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": false,
+          "pets_allowed": false,
+          "parking": true,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 8,
+        "name": "Centro Histórico Loft",
+        "images": [
+          "images/apartment_2/B2.jpg",
+          "images/apartment_2/B4.jpg",
+          "images/apartment_2/B6.jpg",
+          "images/apartment_2/B8.jpg"
+        ],
+        "location": "Edificio Histórico, tercer piso.",
+        "description_1": "Encantador loft de 35 m2 en pleno centro histórico.",
+        "description_2": "Perfecto para 3 personas, con una cama doble y un sofá cama.",
+        "description_3": "Ubicación: A pasos de museos, tiendas y cafeterías locales.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": false,
+          "parking": false,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 9,
+        "name": "Bosque Encantado",
+        "images": [
+          "images/apartment_3/C1.jpg",
+          "images/apartment_3/C3.jpg",
+          "images/apartment_3/C5.jpg",
+          "images/apartment_3/C7.jpg"
+        ],
+        "location": "Residencias Bosque Encantado, primer piso.",
+        "description_1": "Acogedor departamento de 40 m2 rodeado de naturaleza.",
+        "description_2": "Ideal para 2 personas, equipado con cama king y cocina completa.",
+        "description_3": "Ubicación: A 1 km de la ciudad, con acceso directo a senderos y naturaleza.",
+        "features": {
+          "wifi": true,
+          "kitchen": false,
+          "heating": true,
+          "pets_allowed": true,
+          "parking": true,
+          "smoking_allowed": true
+        }
+      },
+      {
+        "id": 10,
+        "name": "Mirador del Fin del Mundo",
+        "images": [
+          "images/apartment_1/A10.jpg",
+          "images/apartment_1/A12.jpg",
+          "images/apartment_1/A14.jpg",
+          "images/apartment_1/A16.jpg"
+        ],
+        "location": "Edificio Mirador, quinto piso.",
+        "description_1": "Moderno apartamento de 60 m2 con vistas panorámicas al Canal Beagle.",
+        "description_2": "Equipado para 4 personas, con dos habitaciones y sala de estar.",
+        "description_3": "Ubicación: A solo 10 minutos del centro y cerca de zonas turísticas.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": true,
+          "parking": true,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 11,
+        "name": "Refugio del Viajero",
+        "images": [
+          "images/apartment_2/B3.jpg",
+          "images/apartment_2/B5.jpg",
+          "images/apartment_2/B7.jpg",
+          "images/apartment_2/B9.jpg"
+        ],
+        "location": "Edificio Refugio, segundo piso.",
+        "description_1": "Acogedor departamento de 28 m2, ideal para viajes de negocios o escapadas cortas.",
+        "description_2": "Equipado para 2 personas con cama matrimonial y escritorio.",
+        "description_3": "Ubicación: Cerca del aeropuerto y con fácil acceso a transporte público.",
+        "features": {
+          "wifi": false,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": false,
+          "parking": false,
+          "smoking_allowed": false
+        }
+      },
+      {
+        "id": 12,
+        "name": "Cerro Loft",
+        "images": [
+          "images/apartment_3/C6.jpg",
+          "images/apartment_3/C8.jpg",
+          "images/apartment_3/C10.jpg",
+          "images/apartment_3/C12.jpg"
+        ],
+        "location": "Edificio Cerro, cuarto piso.",
+        "description_1": "Elegante loft de 55 m2 con vistas a la montaña.",
+        "description_2": "Equipado para 3 personas, con cama king y área de trabajo.",
+        "description_3": "Ubicación: Cerca de áreas recreativas y senderos de montaña.",
+        "features": {
+          "wifi": true,
+          "kitchen": true,
+          "heating": true,
+          "pets_allowed": true,
+          "parking": true,
+          "smoking_allowed": false
         }
       }
     ]
