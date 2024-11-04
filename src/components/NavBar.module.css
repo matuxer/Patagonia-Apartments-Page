@@ -86,15 +86,3 @@ button.open span:last-of-type {
   transform: rotateX(180deg);
   transition-duration: 0.25s;
 }
-
-.menuOpen {
-  transform-origin: top;
-  transform: rotateX(0deg);
-  transition-duration: 0.5s;
-}
-
-.menuClosed {
-  transform-origin: top;
-  transform: rotateX(90deg);
-  transition-duration: 0.25s;
-}

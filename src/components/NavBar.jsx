@@ -13,6 +13,7 @@ function NavBar() {
   const [toggled, setToggled] = useState(false);
   const [apartmentToggled, setApartmentToggled] = useState(false);
   const [desktopToggled, setDesktopToggled] = useState(false);
+  const [hidden, setHidden] = useState(true);
 
   /* Funciones que alternan el estado de los estados de los menus dropdown */
   const handleOnClick = () => {
@@ -32,13 +33,22 @@ function NavBar() {
   };
 
   const handleDesktopClick = () => {
-    setDesktopToggled((prevState) => {
-      return !prevState;
-    });
+    if (desktopToggled) {
+      setDesktopToggled(false);
+      setTimeout(() => {
+        setHidden(true);
+      }, 500);
+    } else {
+      setHidden(false);
+      setDesktopToggled(true);
+    }
   };
 
   /* Cuando se renderiza la página home por primera vez guarda dentro de 'apartments' todos los apartments disponibles dentro de db.json y se setea el estado toggled como falso en caso de haber estado activo */
   useEffect(() => {
+    if (desktopToggled) {
+      setHidden(true)
+    }
     obtenerDatos("/db.json")
       .then((responseData) => {
         setApartments(responseData[0].apartments);
@@ -49,7 +59,7 @@ function NavBar() {
     if (!toggled) {
       setApartmentToggled(false);
     }
-  }, [toggled]);
+  }, [toggled, desktopToggled]);
 
   return (
     <div>
@@ -95,8 +105,10 @@ function NavBar() {
 
             {/* Menu desplegable que muestra los apartments */}
             <div
-              className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[110px] h-[400px] overflow-y-scroll items-center p-0 ${
-                desktopToggled ? `${styles.menuOpen}` : `${styles.menuClosed}`
+              className={`absolute flex flex-col bg-slate-100 top-20 right-0 mr-[93px] h-[400px] overflow-y-scroll items-center p-0 ${
+                desktopToggled
+                  ? ``
+                  : `${hidden ? 'hidden' : ''}`
               }`}
             >
               {/* Se usa el método map para crear un elemento Link para cada apartment */}
@@ -184,22 +196,22 @@ function NavBar() {
         >
           <div className={`overflow-y-scroll`}>
             {/* Se utiliza el método map para generar un elemento Link para cada apartment disponible en el array de apartments */}
-          {apartments.length !== 0 ? (
-            apartments?.map((el) => {
-              return (
-                <Link
-                  onClick={handleOnClick}
-                  key={el.id}
-                  className={`flex justify-center py-4 bg-slate-100 border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
-                  to={`/apartment/${el.id}`}
-                >
-                  {el.name}
-                </Link>
-              );
-            })
-          ) : (
-            <></>
-          )}
+            {apartments.length !== 0 ? (
+              apartments?.map((el) => {
+                return (
+                  <Link
+                    onClick={handleOnClick}
+                    key={el.id}
+                    className={`flex justify-center py-4 bg-slate-100 border-b-[#4E6E82] border-b-2 font-raleway ${styles.dropDownLinks}`}
+                    to={`/apartment/${el.id}`}
+                  >
+                    {el.name}
+                  </Link>
+                );
+              })
+            ) : (
+              <></>
+            )}
           </div>
           <Link
             onClick={handleOnClick}
