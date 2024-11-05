@@ -114,7 +114,7 @@ function Apartment() {
           </p>
         </div>
 
-        <div className="md:w-1/2 md:pl-[144px]">
+        <div className="md:w-1/2 lg:pl-[144px]">
           <h2 className="pl-4 font-raleway font-bold text-xl md:text-2xl">Servicios</h2>
           <div className="grid grid-cols-2 px-5 my-5 md:gap-x-0">
             <p className="font-raleway text-sm text-gray-600 font-medium flex flex-row items-center justify-start mb-3 md:text-base">
