@@ -1,6 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Contact() {
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [message, setMessage] = useState(null);
+  const [errors, setErrors] = useState({});
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+
+  useEffect(() => {
+    const newErrors = {};
+    if (firstName !== null) {
+      if (!firstName.trim()) newErrors.firstName = "El nombre es obligatorio";
+    }
+
+    if (lastName !== null) {
+      if (!lastName.trim()) newErrors.lastName = "El apellido es obligatorio";
+    }
+
+    if (email !== null) {
+
+      if (!email.trim()) {
+        newErrors.email = "El email es obligatorio";
+      } else if (!/\S+@\S+\.\S+/.test(email)) {
+        newErrors.email = "Debe ser un email válido";
+      }
+    }
+
+    if (message !== null) {
+      if (message.trim().length < 40) {
+        newErrors.message = "El mensaje debe tener al menos 40 caracteres";
+      }
+    }
+
+    setErrors(newErrors);
+    setIsSubmitDisabled(Object.keys(newErrors).length > 0);
+  }, [firstName, lastName, email, message]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validar que no haya errores antes de enviar
+    if (isSubmitDisabled) return;
+
+    // Aquí iría el código para enviar el formulario
+    console.log("Formulario enviado con éxito");
+  };
+
   return (
     <div className="pt-[56px] md:pt-[80px] flex flex-col lg:flex-row lg:justify-around lg:items-center lg:px-10 lg:pb-8 xl:px-20 xl:pb-16 xl:pt-[100px]">
       <div className="flex justify-center items-center flex-col lg:w-full">
@@ -15,7 +61,10 @@ function Contact() {
         </div>
 
         {/* Formulario de contacto */}
-        <form className="w-full flex flex-col items-center px-4">
+        <form
+          className="w-full flex flex-col items-center px-4"
+          onSubmit={handleSubmit}
+        >
           <div className="flex flex-row gap-4 w-full">
             <div className="space-y-2 flex flex-col w-full">
               <label
@@ -28,7 +77,12 @@ function Contact() {
                 className="border-2 border-gray-300 rounded-md py-1 px-2 w-full outline-none selection:bg-blue-700 selection:text-white bg-[#f7f7f7] focus:border-[#4E6E82]"
                 id="first_name"
                 placeholder="..."
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
+              {errors.firstName && (
+                <p className="text-red-500 text-xs">{errors.firstName}</p>
+              )}
             </div>
             <div className="space-y-2 flex flex-col w-full">
               <label
@@ -41,7 +95,12 @@ function Contact() {
                 className="border-2 border-gray-300 rounded-md py-1 px-2 w-full outline-none selection:bg-blue-700 selection:text-white bg-[#f7f7f7] focus:border-[#4E6E82]"
                 id="last_name"
                 placeholder="..."
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
+              {errors.lastName && (
+                <p className="text-red-500 text-xs">{errors.lastName}</p>
+              )}
             </div>
           </div>
           <div className="space-y-2 mt-2 flex flex-col w-full">
@@ -56,7 +115,12 @@ function Contact() {
               type="email"
               id="email"
               placeholder="..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
+            {errors.email && (
+              <p className="text-red-500 text-xs">{errors.email}</p>
+            )}
           </div>
           <div className="space-y-2 mt-2 flex flex-col w-full">
             <label
@@ -70,11 +134,21 @@ function Contact() {
               type="email"
               id="message"
               placeholder="Mensaje..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
+            {errors.message && (
+              <p className="text-red-500 text-xs">{errors.message}</p>
+            )}
           </div>
           <button
             type="submit"
-            className="w-full z-0 my-3 bg-[#4E6E82] border-2 border-white text-white font-raleway font-semibold rounded-lg active:text-[#4E6E82] active:bg-white active:border-[#4E6E82] hover:bg-[#456477] lg:w-1/4 xl:w-1/5 lg:self-start"
+            className={`w-full z-0 my-3 ${
+              isSubmitDisabled
+                ? "bg-gray-400"
+                : "bg-[#4E6E82] hover:bg-[#456477] "
+            } border-2 border-white text-white font-raleway font-semibold rounded-lg active:text-[#4E6E82] active:bg-white active:border-[#4E6E82] lg:w-1/4 xl:w-1/5 lg:self-start`}
+            disabled={isSubmitDisabled}
           >
             Enviar
           </button>
