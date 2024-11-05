@@ -145,7 +145,7 @@ function NavBar() {
 
         {/* Navegación que solo va a ser visible cuando la pantalla sea de tamaño 767px o menos */}
         <div className="w-full flex justify-between md:hidden">
-          <SearchBar />
+          <SearchBar apartments={apartments}/>
 
           {/* Botón tipo hamburguesa con animación usado para desplegar el menu de navegación para mobile */}
           <div className="wrap">
