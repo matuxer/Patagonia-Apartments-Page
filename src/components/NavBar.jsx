@@ -86,7 +86,7 @@ function NavBar() {
         <div
           className={`hidden w-full justify-between md:flex md:flex-row ${styles.menuLinks}`}
         >
-          <SearchBar />
+          <SearchBar apartments={apartments} />
 
           <div className="flex flex-row select-none">
             <div

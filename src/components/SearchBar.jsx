@@ -1,15 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SearchBar.module.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function SearchBar() {
+function SearchBar({apartments}) {
+  const [input, setInput] = useState("");
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+
+    let apartment = apartments.filter((el) => el.name.toLowerCase() === input.toLowerCase() )
+    
+
+    if (apartment[0]) {
+      navigate({
+        pathname: `/apartment/${apartment[0].id}`
+      });
+    } else {
+      navigate({
+        pathname: `/apartment/err`
+      });
+    }
+  }
+
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+  }
+
+  useEffect(() => {
+    setInput("");
+  }, [location]);
+
   return (
     <div className={`md:ml-5 ${styles.ui_input_container}`}>
+      <form onSubmit={handleSearchSubmit} action="">
       <input
         required=""
         placeholder="Búsqueda de Apartments ..."
+        autoComplete="off"
         className={styles.ui_input}
+        value={input}
         type="text"
+        onChange={handleInputChange}
       />
+      </form>
       <div className={styles.ui_input_underline}></div>
       <div className={styles.ui_input_highlight}></div>
       <div className={styles.ui_input_icon}>
