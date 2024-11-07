@@ -10,16 +10,25 @@ function Contact() {
 
   useEffect(() => {
     const newErrors = {};
+    const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+
     if (firstName !== null) {
-      if (!firstName.trim()) newErrors.firstName = "El nombre es obligatorio";
+      if (!firstName.trim()) {
+        newErrors.firstName = "El nombre es obligatorio";
+      } else if (!nameRegex.test(firstName)) {
+        newErrors.firstName = "El nombre no puede contener números";
+      }
     }
 
     if (lastName !== null) {
-      if (!lastName.trim()) newErrors.lastName = "El apellido es obligatorio";
+      if (!lastName.trim()) {
+        newErrors.lastName = "El apellido es obligatorio";
+      } else if (!nameRegex.test(lastName)) {
+        newErrors.lastName = "El apellido no puede contener números";
+      }
     }
 
     if (email !== null) {
-
       if (!email.trim()) {
         newErrors.email = "El email es obligatorio";
       } else if (!/\S+@\S+\.\S+/.test(email)) {
