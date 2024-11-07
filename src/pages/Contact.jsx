@@ -8,10 +8,12 @@ function Contact() {
   const [errors, setErrors] = useState({});
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
+  /* Cada vez que se renderiza el componente o cambia alguno de los estados (firstName, lastName, email, message), el useEffect() va a controlar que se cumplan las validaciones de cada input para asi desbloquear el boton submit */
   useEffect(() => {
     const newErrors = {};
     const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
+    /* Validaciones del input de Nombre. No puede estar vacío y no puede contener números */
     if (firstName !== null) {
       if (!firstName.trim()) {
         newErrors.firstName = "El nombre es obligatorio";
@@ -20,6 +22,7 @@ function Contact() {
       }
     }
 
+    /* Validaciones del input de Apellido. No puede estar vacío y no puede contener números */
     if (lastName !== null) {
       if (!lastName.trim()) {
         newErrors.lastName = "El apellido es obligatorio";
@@ -28,6 +31,7 @@ function Contact() {
       }
     }
 
+    /* Validaciones del input de Email. No puede estar vacío y tiene que ser un email */
     if (email !== null) {
       if (!email.trim()) {
         newErrors.email = "El email es obligatorio";
@@ -36,12 +40,14 @@ function Contact() {
       }
     }
 
+    /* Validaciones del textarea de Mensaje. Tiene que tener mínimo 40 carácteres */
     if (message !== null) {
       if (message.trim().length < 40) {
         newErrors.message = "El mensaje debe tener al menos 40 caracteres";
       }
     }
 
+    /* Se guardan los errores en el estado, y si existe al menos 1 error el botón de Submit queda deshabilitado */
     setErrors(newErrors);
     setIsSubmitDisabled(Object.keys(newErrors).length > 0);
   }, [firstName, lastName, email, message]);
@@ -89,6 +95,7 @@ function Contact() {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
+              {/* Estos mensajes que estan abajo de cada input van a aparecer solo si existe un error para el input específico (No cumplió con alguna de las validaciones). */}
               {errors.firstName && (
                 <p className="text-red-500 text-xs">{errors.firstName}</p>
               )}
@@ -157,6 +164,7 @@ function Contact() {
                 ? "bg-gray-400"
                 : "bg-[#4E6E82] hover:bg-[#456477] "
             } border-2 border-white text-white font-raleway font-semibold rounded-lg active:text-[#4E6E82] active:bg-white active:border-[#4E6E82] lg:w-1/4 xl:w-1/5 lg:self-start`}
+            /* Si el estado isSubmiteDisabled esta en true el botón de Submit queda deshabilitado */
             disabled={isSubmitDisabled}
           >
             Enviar
