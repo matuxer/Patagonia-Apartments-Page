@@ -15,6 +15,7 @@ import wifiIcon from "../images/wifi-svgrepo-com.svg";
 import { obtenerDatos } from "../helper/controllers";
 
 function Home() {
+  /* Los filtros tienen un estado inicial que se establece cada vez que se renderiza el componente */
   const filtersInitialState = {
     wifi: false,
     kitchen: false,
@@ -28,6 +29,7 @@ function Home() {
   const [apartments, setApartments] = useState([]);
   const [filters, setFilters] = useState(filtersInitialState);
 
+  /* La funcion handleFilterButton se va a encargar de setear en verdadero cada filtro según corresponda cuando algún boton de filtro sea activado */
   const handleFilterButton = (e) => {
     const value = e.currentTarget.value;
     setFilters((prevState) => {
@@ -102,8 +104,8 @@ function Home() {
           </p>
         </div>
 
-        {/* Se llama al componente Cards el cual va a renderiza las Cards de apartments */}
         <div className="w-full bg-[#f0f4f4] border-t-2 border-t-[#4E6E82] mt-[244px] md:mt-[240px] ">
+          {/* Se cargan los botones de filtro los cuales cambian de estilo dependiendo si están activados o no */}
           <div className="w-full flex flex-row overflow-x-scroll pl-4 py-3 scroll:overflow-hidden lg:pt-5  lg:justify-center ">
             <button
               className={`${
@@ -190,6 +192,8 @@ function Home() {
               Fumar
             </button>
           </div>
+
+          {/* Se llama al componente Cards el cual va a renderiza las Cards de apartments */}
           <Cards apartments={apartments} filters={filters} />
         </div>
       </section>
