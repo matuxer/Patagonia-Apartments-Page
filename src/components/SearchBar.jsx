@@ -8,12 +8,12 @@ function SearchBar({apartments}) {
   const location = useLocation();
   const navigate = useNavigate();
 
+  /* Función que se ejecuta cuando se haga Submit del input del SearchBar y busca los apartments que coincidan con el nombre */
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-
     let apartment = apartments.filter((el) => el.name.toLowerCase() === input.toLowerCase() )
-    
 
+    /* Si encuentra un apartment que coincida, redirige al usuario a la página de apartment, sino lo redirige a una página de error 404 */
     if (apartment[0]) {
       navigate({
         pathname: `/apartment/${apartment[0].id}`
@@ -25,10 +25,12 @@ function SearchBar({apartments}) {
     }
   }
 
+  /* Función que va ir modificando el estado input según cambie el input de la SearchBar */
   const handleInputChange = (e) => {
     setInput(e.target.value);
   }
 
+  /* Cada vez que se vuelve a renderizar el componente SearchBar se limpia el estado de input */
   useEffect(() => {
     setInput("");
   }, [location]);
@@ -38,7 +40,7 @@ function SearchBar({apartments}) {
       <form onSubmit={handleSearchSubmit} action="">
       <input
         required=""
-        placeholder="Búsqueda de Apartments ..."
+        placeholder="Búsqueda por nombre..."
         autoComplete="off"
         className={styles.ui_input}
         value={input}
