@@ -86,6 +86,8 @@ function NavBar() {
         <div
           className={`hidden w-full justify-between md:flex md:flex-row ${styles.menuLinks}`}
         >
+
+          {/* Se renderiza el componente Searchbar en el diseño Desktop y se le pasa los apartments como propiedades */}
           <SearchBar apartments={apartments} />
 
           <div className="flex flex-row select-none">
@@ -145,6 +147,8 @@ function NavBar() {
 
         {/* Navegación que solo va a ser visible cuando la pantalla sea de tamaño 767px o menos */}
         <div className="w-full flex justify-between md:hidden">
+
+          {/* Se renderiza el componente Searchbar en el diseño Mobile y se le pasa los apartments como propiedades */}
           <SearchBar apartments={apartments}/>
 
           {/* Botón tipo hamburguesa con animación usado para desplegar el menu de navegación para mobile */}
